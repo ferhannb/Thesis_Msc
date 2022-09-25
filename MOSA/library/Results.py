@@ -6,16 +6,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 
-class Graphs():
-
-    def __init__(self,rows=4,cols=1):
-        self.figure = go.Figure()
-        self.rows = rows
-        self.cols = cols 
-        self.figure = make_subplots(rows=self.rows,cols=self.rows)
-
-
-    def plotly_results(self,time,speed,commad_speed,):
 
 
     fig = make_subplots(rows=4, cols=1)

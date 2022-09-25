@@ -346,7 +346,7 @@ class Otter:
         [self.nu, self.u_actual]=self.dynamics(self.current_eta, self.nu, self.u_actual, self.u_control, sampleTime)
         self.current_eta = attitudeEuler(self.current_eta, self.nu, sampleTime)
         heading=self.current_eta[5]*180/math.pi %360
-        self.speed=math.sqrt(self.nu[0]**2+self.nu[1]**2)
+        self.speed=self.nu[0]#math.sqrt(self.nu[0]**2+self.nu[1]**2)
 
         output = dict(current_eta=self.current_eta,nu=self.nu,u_actual=self.u_actual,heading=heading,speed=self.speed)
         return output
