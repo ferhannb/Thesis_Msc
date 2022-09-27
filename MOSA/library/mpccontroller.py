@@ -49,15 +49,6 @@ class MPCUSV():
                               u*ca.cos(psi)-v*ca.sin(psi),
                               u*ca.sin(psi)+v*ca.cos(psi),
                               r)
-
-        # dynamics = ca.vertcat ((0.01262154610383696)*((Tp+Ts)+(77.55443234836703)*u+(0)*u),
-        #                        (0.006560008561141038)*(0+(-0.0)*v+(0)*v),
-        #                        (0.00799364586576341)*(B*(Tp-Ts)+(605.4038837833798)*r+(0)*r),
-        #                         u*ca.cos(psi)-v*ca.sin(psi),
-        #                         u*ca.sin(psi)+v*ca.cos(psi),
-        #                         r)
-                                
-
               
         Q = ca.SX.zeros(self.n_states,self.n_states)
         Q[0,0] = 1#500
@@ -88,12 +79,9 @@ class MPCUSV():
         R[1,1] = 0.025
 
 
-
-
         self.f = ca.Function('f',[states,inputs],[dynamics])
         
         # Optimization variables for all states and inputs in control horizon
-
 
         X = ca.SX.sym('X',self.n_states,self.N+1)
         U = ca.SX.sym('U',self.n_inputs,self.N)
@@ -149,10 +137,6 @@ class MPCUSV():
 
         lbx = ca.DM.zeros((self.n_states*(self.N+1) + self.n_inputs*self.N, 1))
         ubx = ca.DM.zeros((self.n_states*(self.N+1) + self.n_inputs*self.N, 1))
-
-
-
-
 
         lbx[0: self.n_states*(N+1): self.n_states] = -3         # u lower bound
         lbx[1: self.n_states*(N+1): self.n_states] = -0.5         # v lower bound

@@ -27,9 +27,9 @@ class USVController():
         self.intplt = OtterPolation() 
         self.heading_error=0
         self.prev_U = 0
+
     def Heading_controller(self,ref_heading,current_eta,Kp=0,Ki=0,Kd=0):
 
-        
         feed_back = math.degrees(current_eta[-1])
         self.heading_error = ref_heading-feed_back
 
@@ -54,8 +54,6 @@ class USVController():
 
         
         Control_signal = U_p + U_d + self.U_i_heading
-        
-    
         self.prev_heading_error  = self.heading_error
 
         return Control_signal
@@ -69,6 +67,7 @@ class USVController():
 
         # Feedforward Term
         U_f = self.intplt.interpolation(ref_speed)
+        
         if pid_method == 0:
             # Velocity PID
             # Propotion Term
@@ -77,9 +76,11 @@ class USVController():
             self.vU_i = Ki*self.speed_error
             # Control Signal 
 
-            self.U = U_f+self.vU_p+self.vU_i#+self.prev_U
+            self.U = U_f+self.vU_p+self.vU_i
             self.prev_U = self.U
+            self.prev_error=self.error
             return self.U
+
         if pid_method==1:
             # Positional PID
             # Proportion Term 
@@ -104,8 +105,6 @@ class USVController():
                 self.U_sat=sorted((-self.saturation_limit, self.U, self.saturation_limit))[1]
                 if self.U!=self.U_sat:
                     self.U_i_prev = self.U_sat-self.U_p-U_f
-
-
                 
                 self.prev_error = self.speed_error
                 return self.U_sat
