@@ -7,12 +7,20 @@ from dynamic_obs import TargetVehicle
 from otterMPC import Otter
 
 
+from OtterDynamicClass import Otter
 
-class Colreg_Define():
+class Colreg_Define(Otter):
 
-    def __init__(self):
-
+    def __init__(self,controlSystem="stepInput", 
+                r = 0, 
+                V_current = 0, 
+                beta_current = 0, 
+                tau_X = 120):
+        super().__init__(r , V_current , beta_current , tau_XcontrolSystem="stepInput")
         self.colreg='Safe'
+        self.otter_eta = Otter.current_eta
+        self.otter_nu = Otter.nu
+        
         
 
     def convert_east_north(self,radian): 
@@ -128,17 +136,17 @@ class Colreg_Define():
     
 
 
-    def colreg_situation(self,U_speed,current_eta,x_oArr,y_oArr,t_oArr,Ts_speed,TS_x,TS_y,TS_heading,x_tArr,y_tArr,c_tArr,theta_dot):
+    def colreg_situation(self,U_speed,x_oArr,y_oArr,t_oArr,Ts_speed,TS_x,TS_y,TS_heading,x_tArr,y_tArr,c_tArr,theta_dot):
 
         """Bu fonksiyonda OS ve TS'in COLREG durumuna bakilir. OS current_eta, prediction list TS kinematik func. verileri ve prediction list 
             verilerine göre çarpışma durumları kontrol edilir."""
 
 
-        OS_x = current_eta[0]
-        OS_y = current_eta[1]
-        OS_heading = current_eta[5]
-
-
+        OS_x =  self.otter_eta[0]
+        OS_y = self.otter_eta[1]
+        OS_heading = self.otter_eta[5]
+        U_speed = math.sqrt(self.nu[0]**2+self.nu[1]**2)
+        
 
         x_dist = ([abs(a_x-b_x) for a_x, b_x in zip(x_oArr,x_tArr)])
         min_value = min(x_dist)

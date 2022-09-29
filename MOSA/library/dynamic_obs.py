@@ -76,9 +76,9 @@ class TargetVehicle():
         print('theta dot',self.theta_dot)
 
 
-        predict_x_list=[]
-        predict_y_list=[]
-        predict_theta_list=[]
+        self.predict_x_list=[]
+        self.predict_y_list=[]
+        self.predict_theta_list=[]
 
 
 
@@ -105,11 +105,11 @@ class TargetVehicle():
             y_ = y_next
             theta_ = theta_next
 
-            predict_x_list.append(x_next )
-            predict_y_list.append(y_next)
-            predict_theta_list.append(theta_)
+            self.predict_x_list.append(x_next )
+            self.predict_y_list.append(y_next)
+            self.predict_theta_list.append(theta_)
 
-        return predict_x_list,predict_y_list,predict_theta_list,theta_dot
+        
 
 
 
