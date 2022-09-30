@@ -124,6 +124,9 @@ class TargetVehicle():
         plt.show(block=False)
         plt.pause(0.02)
 
+    def set_obstacle(self):
+        
+
 
 if __name__ == "__main__":
     targetVehicle = TargetVehicle() 
