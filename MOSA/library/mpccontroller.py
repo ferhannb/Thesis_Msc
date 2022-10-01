@@ -4,7 +4,7 @@ import casadi as ca
 import numpy as np
 import math 
 import time
-from otterMPC import Otter
+from OtterDynamicClass import Otter
 from drawMPC import Draw_MPC_point_stabilization
 
 

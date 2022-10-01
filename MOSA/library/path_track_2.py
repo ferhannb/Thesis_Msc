@@ -241,8 +241,8 @@ class LineofSight():
         output = dict(error_angle=error_angle,U_desired=U_desired,y_e=y_e,chi_d=self.chi_d,x_los=self.x_los,y_los=self.y_los,Wpy=Wpy[self.k+1],Wpx=Wpx[self.k+1])
         return output
 
-    # def los_simulation(self,eta,Wpx,Wpy,u_control,x_obs,y_obs,current_eta,OS_Arr,TS_Arr):
-    def los_simulation(self,eta,Wpx,Wpy,u_control):
+    def los_simulation(self,eta,Wpx,Wpy,u_control,x_obs,y_obs,current_eta,OS_Arr,TS_Arr):
+    # def los_simulation(self,eta,Wpx,Wpy,u_control):
         self.x_pose.append(eta[0])
         self.y_pose.append(eta[1])
 
@@ -254,19 +254,19 @@ class LineofSight():
         plt.ylim([0,40])
         plt.plot(Wpx,Wpy,'ro',label='Waypoints')
 
-        # plt.gcf().gca().add_artist(plt.Circle((x_obs,y_obs),2,fill=False))
+        plt.gcf().gca().add_artist(plt.Circle((x_obs,y_obs),2,fill=False))
 
         plt.plot(self.x_init,self.y_init,'m--')
 
         plt.plot(self.x_pose, self.y_pose,"r--")
 
-        # plt.title([u_control[1],u_control[0],self.var_lookhead_distance,current_eta])
+        plt.title([u_control[1],u_control[0],self.var_lookhead_distance,current_eta])
         
         plt.plot(eta[0],eta[1],'bo',label='vahicle position')
         plt.title(u_control)
-        # plt.plot(OS_Arr[0],OS_Arr[1],'b-.')
+        plt.plot(OS_Arr[0],OS_Arr[1],'b-.')
 
-        # plt.plot(TS_Arr[0],TS_Arr[1],'c-.')
+        plt.plot(TS_Arr[0],TS_Arr[1],'c-.')
 
         plt.plot(self.x_closest,self.y_closest,'co')
         

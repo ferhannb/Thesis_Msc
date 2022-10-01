@@ -61,6 +61,11 @@ class Otter:
 
        
 
+        self.nu = np.array([0, 0, 0, 0, 0, 0], float)
+        self.u_actual = np.array([0, 0], float)
+        self.u_control = np.array([0, 0], float)
+        self.current_eta = np.array([0, 0, 0, 0, 0, 0], float)
+        self.speed = 0
 
         if controlSystem == "headingAutopilot":
             self.controlDescription = (
@@ -293,6 +298,7 @@ class Otter:
 
 
         nu_dot = np.matmul(self.Minv, sum_tau)  # USV dynamics
+        print('nu_dot',nu_dot)
         n_dot = (u_control - n) / self.T_n  # propeller dynamics
         trim_dot = (self.trim_setpoint - self.trim_moment) / 5  # trim dynamics
 
@@ -369,28 +375,3 @@ class Otter:
     u-actual: pervane modelinin çalışması için sisteme tekrar girecek pervane rpm değeri
     
     """
-# def start(steptime):
-#     vehicle=Otter()
-#     global current_eta
-#     global nu
-#     global u_actual
-#     global u_control
-#     global sampleTime
-#     global speed
-#     global heading
-
-    
-#     nu = np.array([0, 0, 0, 0, 0, 0], float)
-#     u_actual = np.array([0, 0], float)
-#     u_control = np.array([0, 0], float)           
-#     current_eta = np.array([0, 10, 0, 0, 0, math.radians(0)], float)
-#     heading=current_eta[5]*180/math.pi %360
-#     speed = math.sqrt(nu[0]**2+nu[1]**2)
-#     sampleTime=steptime
-
-#     return
-
-
-
-
-

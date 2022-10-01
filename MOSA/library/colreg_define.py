@@ -1,27 +1,19 @@
 
 import math
-from re import U 
-import numpy as np
-import pandas as pd
 from dynamic_obs import TargetVehicle
-from otterMPC import Otter
+from path_track_2 import LineofSight
+from mpccontroller import MPCUSV
+from mpc_colav import MPCUSV_colav
 
+class Colreg_Define(TargetVehicle):
 
-from OtterDynamicClass import Otter
-
-class Colreg_Define(Otter):
-
-    def __init__(self,controlSystem="stepInput", 
-                r = 0, 
-                V_current = 0, 
-                beta_current = 0, 
-                tau_X = 120):
-        super().__init__(r , V_current , beta_current , tau_XcontrolSystem="stepInput")
+    def __init__(self):
+        super().__init__()
         self.colreg='Safe'
-        self.otter_eta = Otter.current_eta
-        self.otter_nu = Otter.nu
-        
-        
+        self.los = LineofSight()
+        self.mpc_los = MPCUSV()
+        self.mpc_collision = MPCUSV_colav(0,0,0)
+        self.col_dist = 5 
 
     def convert_east_north(self,radian): 
         """From vessel coordinate frame to COLREG coordinate frame"""
@@ -136,15 +128,15 @@ class Colreg_Define(Otter):
     
 
 
-    def colreg_situation(self,U_speed,x_oArr,y_oArr,t_oArr,Ts_speed,TS_x,TS_y,TS_heading,x_tArr,y_tArr,c_tArr,theta_dot):
+    def colreg_situation(self,colreg,x_oArr,y_oArr,Ts_speed,TS_x,TS_y,TS_heading,x_tArr,y_tArr,c_tArr,theta_dot):
 
         """Bu fonksiyonda OS ve TS'in COLREG durumuna bakilir. OS current_eta, prediction list TS kinematik func. verileri ve prediction list 
             verilerine göre çarpışma durumları kontrol edilir."""
 
 
-        OS_x =  self.otter_eta[0]
-        OS_y = self.otter_eta[1]
-        OS_heading = self.otter_eta[5]
+        OS_x =  self.current_eta[0]
+        OS_y = self.current_eta[1]
+        OS_heading = self.current_eta[5]
         U_speed = math.sqrt(self.nu[0]**2+self.nu[1]**2)
         
 
@@ -179,42 +171,68 @@ class Colreg_Define(Otter):
         # Yukarıdaki fonksiyon predict edilen araç doğrultularının kesişim durumlarına bakar.
         
         
-        if self.colreg['COLREG']=='Give-Away':
+        if colreg['COLREG']=='Give-Away':
 
             if mindistV2V<0.5: # Rotalar Kesişiyorsa
                 print('KESİŞİM')
-                self.colreg['COLREG'] = 'Give-Away'
+                colreg['COLREG'] = 'Give-Away'
                 if OS_int_time>TS_int_time+5 : #or OS_int_time<TS_int_time+5
                     print('----------------------------------')
-                    self.colreg['COLREG'] = 'Safe'
+                    colreg['COLREG'] = 'Safe'
                 if  OS_int_time+5<TS_int_time : #or OS_int_time<TS_int_time+5
                     print('**********************************')
-                    self.colreg['COLREG'] = 'Safe'
+                    colreg['COLREG'] = 'Safe'
 
             elif theta_dot !=0 and math.sqrt((x_oArr[-1]-x_tArr[-1])**2+(y_oArr[-1]-y_tArr[-1])**2)>5:
 
-                self.colreg['COLREG'] = 'Safe'
+                colreg['COLREG'] = 'Safe'              
 
-                    
+        return colreg
 
-        return self.colreg
+    def colreg_execute(self,path_follow,init_states,los_output,output_set,colreg):
+
+        if path_follow:
+            mpc_output = self.mpc_los.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['x_los'],los_output['y_los'],los_output['chi_d']])
+        else:
+            
+            print('==OBSTACLE')
+            if colreg['COLREG']=='Head-on':
+                # print('HEAD_ON')
+                sc='HEAD-ON'
+                mpc_output= self.mpc_collision.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['Wpx'],los_output['Wpy'],math.atan2((los_output['Wpy']-current_eta[1]),(los_output['Wpx']-current_eta[0]))])
+                if 180<=colreg['RelTarget'] and colreg['RelTarget']<=270:
+                    mpc_output= self.mpc_los.execute_MPC(init_states,[0,0,0,los_output['x_los'],los_output['y_los'],los_output['chi_d']])
+
+            elif colreg['COLREG']=='Give-Away':
+                # print('Give-Away')
+                mpc_output= self.mpc_collision.execute_MPC(init_states,[los_output['U_desired'],0,0,output_set['obs_x']+self.col_dist*math.cos(math.radians(output_set['obs_heading']+180))
+                            ,output_set['obs_y']+self.col_dist*math.sin(math.radians(output_set['obs_heading']+180)),math.atan2((output_set['obs_y']-self.current_eta[1]),(output_set['obs_x']+10-self.current_eta[0]))])
+                # mpc_output= mpc.execute_MPC(init_states,[0,0,0,x_obs+10,y_obs,math.atan2((y_obs-current_eta[1]),(x_obs+10-current_eta[0]))])
+                # mpc_output= mpc.execute_MPC(init_states,[0,0,0,los_output['Wpx'],los_output['Wpy'],math.atan2((los_output['Wpy']-current_eta[1]),(los_output['Wpx']-current_eta[0]))])
+            elif colreg['COLREG']=='Safe':
+                # print('11Safe')
+                mpc_output= self.mpc_los.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['x_los'],los_output['y_los'],los_output['chi_d']])
+        
+        return colreg,mpc_output
 
 
 
     
+# if __name__=='__main__':
 
-if __name__=='__main__':
+deneme = Colreg_Define()
+print(deneme.current_eta)
 
-    colreg_ = Colreg_Define()
+#     colreg_ = Colreg_Define()
 
+#     print(TargetVehicle.current_eta)
 
-
-    ship1 = pd.DataFrame({'MMSI':[1], 'LAT':[0], 'LON':[0], 'SOG':[10], 'COG':[90]})
-    ship2 = pd.DataFrame({'MMSI':[2], 'LAT':[2000], 'LON':[2000], 'SOG':[10], 'COG':[180]})
+#     ship1 = pd.DataFrame({'MMSI':[1], 'LAT':[0], 'LON':[0], 'SOG':[10], 'COG':[90]})
+#     ship2 = pd.DataFrame({'MMSI':[2], 'LAT':[2000], 'LON':[2000], 'SOG':[10], 'COG':[180]})
     
-    output = colreg_.COLREG_detect(ship1,ship2)
+#     output = colreg_.COLREG_detect(ship1,ship2)
 
-    col = colreg_.colreg_situation()
+#     col = colreg_.colreg_situation()
 
 
     

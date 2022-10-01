@@ -53,7 +53,7 @@ class LineofSightfirst():
         self.u =0
         self.v=0
 
-    def path_generate(self,Wpx,Wpy):
+    def path_generate(self,Wpx,Wpy,ds=0.01):
         ds = 0.01
         if self.select_path==0:
             self.coeff ,self.x_init, self.y_init,self.Wp_x_init,self.Wp_y_init= generate_curve(Wpx,Wpy,ds)

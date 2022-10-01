@@ -91,25 +91,28 @@ def set_obstacle():
 
     diam_usv = 2
     diam_obs = 3
-    x_obs,y_obs,course,obs_speed=obstacle.KinematicTarget()   
-    x_obsArr,y_obsArr,courseArr,TS_theta_dot=obstacle.prediction_movement(x_obs,y_obs,course)
+    obstacle.KinematicTarget()   # target object için 
+    obstacle.prediction_movement() # target object için 
 
-    dist = math.sqrt((current_eta[0]-x_obs)**2+(current_eta[1]-y_obs)**2)-(diam_usv/2+diam_obs/2+0.5) 
+    dist = math.sqrt((current_eta[0]-obstacle.x)**2+(current_eta[1]-obstacle.y)**2)-(diam_usv/2+diam_obs/2+0.5) 
     safe_dist = 25
 
     if dist>safe_dist:
-        param=True
+        path_follow=True
 
     else:
-        param=False
-    return param,x_obs,y_obs,safe_dist,course,x_obsArr,y_obsArr,courseArr,obs_speed,TS_theta_dot
+        path_follow=False
+        output = dict(path_follow=path_follow,obs_x=obstacle.x,obs_y=obstacle.y,safe_dict= safe_dist,obs_heading=obstacle.course,obs_pre_x=obstacle.predict_x_list,obs_pre_y=obstacle.predict_y_list,
+                obs_pre_heading=obstacle.predict_theta_list,obs_speed=obstacle.U_speed,obs_theta_dot = obstacle.theta_dot)
+    return path_follow, obstacle.x,obstacle.y,safe_dist,obstacle.course,obstacle.predict_x_list,obstacle.predict_y_list,obstacle.predict_theta_list,obstacle.U_speed,obstacle.theta_dot
+    # return output
 
 
-def colreg_execute(param,init_states,los_output,colreg):
+def colreg_execute(path_follow,init_states,los_output,colreg):
 
 
-    if param:
-        # print('LOS')
+    if path_follow:
+        
         mpc_output= mpc_los.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['x_los'],los_output['y_los'],los_output['chi_d']])
     else:
         print('==OBSTACLE')

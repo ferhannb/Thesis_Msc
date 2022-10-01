@@ -4,7 +4,7 @@ import casadi as ca
 import numpy as np
 import math 
 import time
-from otterMPC import Otter
+from OtterDynamicClass import Otter
 from dynamic_obs import TargetVehicle
 
 class MPCUSV_colav(TargetVehicle):

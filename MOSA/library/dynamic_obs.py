@@ -2,13 +2,18 @@ import numpy as np
 from gnc import attitudeEuler
 import math
 import matplotlib.pyplot as plt
-from otterPID import start,function
+from OtterDynamicClass import Otter
 
+class TargetVehicle(Otter):
+    """Bu classda çevrediki dinamik engellerin ve kendi aracimizin rotalarini tahmin eden fonksiyonlar yer almaktadir."""
 
+    def __init__(self,x=35,y=15,theta=90,v=3,omega=0,controlSystem="stepInput", 
+                r = 0, 
+                V_current = 0, 
+                beta_current = 0, 
+                tau_X = 120):
 
-class TargetVehicle():
-
-    def __init__(self,x=35,y=15,theta=90,v=3,omega=0):
+        super().__init__(controlSystem,r,V_current,beta_current,tau_X)
         self.x = x
         self.y = y
         self.theta = theta
@@ -19,9 +24,17 @@ class TargetVehicle():
         self.x_list=[]
         self.y_list=[]
         self.theta_list=[]
+        self.safe_dist = 25
+        self.course = 0
         
 
+        
+    
+
+            
+
     def KinematicTarget(self,dt=0.02):
+        """Arac hareket eden nesneler için kinematik denklem"""
 
         A = np.array([[math.cos(math.radians(self.theta)),0],[math.sin(math.radians(self.theta)),0],[0,1]])
         B = np.array([[self.v],[self.omega]])
@@ -36,17 +49,18 @@ class TargetVehicle():
 
         self.x=self.x[0]
         self.y=self.y[0]
-        self.course=self.course[0]
-        U_speed = math.sqrt(x_dot[0]**2+x_dot[1]*2)
+        self.course=self.course[0] 
+        self.U_speed = math.sqrt(x_dot[0]**2+x_dot[1]*2) # vehicle Course speed 
 
-        return self.x,self.y,self.course,U_speed
+    
 
-    def prediction_movement(self,x,y,course,dt=0.02):
+    def prediction_movement(self,dt=0.02):
+        """Geçmiş seyir verilerinden yararlanarak aracin geşecekteki konum verilerinin çikarilmasi"""
 
 
-        self.x_list.append(x)
-        self.y_list.append(y)
-        self.theta_list.append(course)
+        self.x_list.append(self.x)
+        self.y_list.append(self.y)
+        self.theta_list.append(self.course)
    
 
         if len(self.x_list)==101:
@@ -83,11 +97,11 @@ class TargetVehicle():
 
 
         U = math.sqrt(self.x_dot**2+self.y_dot**2)
-        x_ =x
-        y_ =y
+        x_ =self.x
+        y_ =self.y
         theta_dot=self.theta_dot
 
-        theta_ =course
+        theta_ =self.course
 
         for _ in range(1000):
             
@@ -105,12 +119,24 @@ class TargetVehicle():
             y_ = y_next
             theta_ = theta_next
 
-            self.predict_x_list.append(x_next )
-            self.predict_y_list.append(y_next)
-            self.predict_theta_list.append(theta_)
+            self.predict_x_list.append(x_next ) # predicted x of vehicle 
+            self.predict_y_list.append(y_next)  # predicted y of vehicle 
+            self.predict_theta_list.append(theta_) # predicted theta of vehicle 
+    
+    def set_obstacle(self,obs_x,obs_y,obs_theta,obs_v,diam_usv=2,diam_obs=3):
+        "Dinamik engellin konum ve heading tahmini"
+        obstacle = TargetVehicle(obs_x,obs_y,obs_theta,obs_v)
+        obstacle.KinematicTarget()   
+        x_obsArr,y_obsArr,courseArr,TS_theta_dot=self.prediction_movement()
+        dist = math.sqrt((self.current_eta[0]-self.x)**2+(self.current_eta[1]-self.y)**2)-(diam_usv/2+diam_obs/2+0.5) 
+        
+        if dist>self.safe_dist:
+            param=True
+        else:
+            param=False
+        return param,x_obsArr,y_obsArr,courseArr,TS_theta_dot
 
         
-
 
 
     def simulation(self,predict_x_list,predict_y_list,x_o,y_o):
@@ -124,36 +150,12 @@ class TargetVehicle():
         plt.show(block=False)
         plt.pause(0.02)
 
-    def set_obstacle(self):
-        
 
 
-if __name__ == "__main__":
-    targetVehicle = TargetVehicle() 
-    otterVehicle = TargetVehicle()
-    x=[]
-    y=[]
-    x_list=[]
-    y_list=[]
-    t_list=[]
-    start(0.02)
-    for i in range(1000):
-        
 
-        output = function([100,100])
-        o_x,o_y,o_c = otterVehicle.prediction_movement(output[0][0],output[0][1],(math.degrees(output[0][5])%360))
-        x_,y_,co,U_speed=targetVehicle.KinematicTarget()
-        x_p,y_p,c_p=targetVehicle.prediction_movement(x_,y_,co)
-        x_dist=[abs(a_x-b_x) for a_x, b_x in zip(o_x,x_p)]
-        minvalue=min(x_dist)
-        minindex=x_dist.index(minvalue)
-        
-        y_dist=[abs(a_y-b_y) for a_y, b_y in zip(o_y,y_p)]
-        min_x =min(x_dist)
-        min_y =min(y_dist)
-        mindistV2V=math.sqrt(min_x**2+min_y**2)
-        
-        targetVehicle.simulation(x_p,y_p,o_x,o_y)
+if __name__=='__main__':
+    
+    target = TargetVehicle()
+    print(target.current_eta)
+    
 
-
-        
