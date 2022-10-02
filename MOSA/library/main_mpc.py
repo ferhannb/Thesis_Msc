@@ -10,7 +10,7 @@ from mpc_colav import MPCUSV_colav
 from mpccontroller import MPCUSV
 import casadi as ca 
 import time
-from otterMPC import Otter
+from OtterDynamicClass import Otter
 from dynamic_obs import TargetVehicle
 from colreg_define import COLREG_detect,colreg_situation
 
@@ -200,4 +200,4 @@ for i in range(8000):
 
     init_states = ca.vertcat(0,0,0,x_init,y_init,yaw_init)
     radius=R_cal.R_cal(current_eta)
-    los2.los_simulation(current_eta,Wpx,Wpy,u_control,x_obs,y_obs,[col_dist*math.cos(math.radians(course+180)+col_dist*math.sin(math.radians(course+180))),colreg,],OS_Arr,TS_Arr)
+    los2.los_simulation(colreg,current_eta,Wpx,Wpy,u_control,x_obs,y_obs,[col_dist*math.cos(math.radians(course+180)+col_dist*math.sin(math.radians(course+180))),colreg,],OS_Arr,TS_Arr)

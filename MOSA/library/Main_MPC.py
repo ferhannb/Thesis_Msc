@@ -11,7 +11,7 @@ import numpy as np
 
 
 
-obstacle = TargetVehicle(30,10,90,0.5)
+obstacle = TargetVehicle(30,10,90,1.2)
 OtterPredict = TargetVehicle(0,0,90,0)
 colreg_detect = Colreg_Define()
 los = LineofSight()
@@ -47,9 +47,10 @@ Wpy = [20,30,70,30]
 init_states = [0,0,0,0,0,0]
 coeff = los.path_generate(Wpx,Wpy)
 OtterPredict.current_eta=np.array([10,20,0,0,0,math.radians(30)])
-for i in range(4000):
+
+for i in range(5000):
     OtterPredict.prediction_movement()
-    los_output = los.execute(OtterPredict.current_eta,OtterPredict.nu,Wpx,Wpy)
+    los_output = los.execute(OtterPredict.nu,OtterPredict.current_eta,Wpx,Wpy)
     set_output = set_obstacle()
     
     mpc_los = MPCUSV()
@@ -80,3 +81,4 @@ for i in range(4000):
     TS_Arr = [set_output['obs_pre_x'],set_output['obs_pre_y'],set_output['obs_pre_heading']]
 
     los.los_simulation(OtterPredict.current_eta,Wpx,Wpy,OtterPredict.u_control,set_output['obs_x'],set_output['obs_y'],[colreg_detect.col_dist*math.cos(math.radians(set_output['obs_heading']+180)+colreg_detect.col_dist*math.sin(math.radians(set_output['obs_heading']+180))),colreg,],OS_Arr,TS_Arr)
+    

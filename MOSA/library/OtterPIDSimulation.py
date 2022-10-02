@@ -34,8 +34,8 @@ Kd_speed = 0
 
 ### Heading ###
 
-Kp_heading=-10
-Ki_heading=-4
+Kp_heading=-3.5
+Ki_heading=0
 Kd_heading=0
 
 
@@ -61,7 +61,7 @@ timeOtter=[]
 los_index.path_generate(Wpx,Wpy) # self.coeff ,self.x_init, self.y_init,self.Wp_x_init,self.Wp_y_init
 Time = 0.0
 e,a,b,c,d = generate_curve(Wpx,Wpy,0.01)
-for i in range(1000):
+for i in range(3000):
 
     Time+=0.02
     timeOtter.append(Time)

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from signal import signal
 from numpy import clip
 from interpolation_ import OtterPolation
 import math
@@ -27,6 +28,7 @@ class USVController():
         self.intplt = OtterPolation() 
         self.heading_error=0
         self.prev_U = 0
+        self.U=0
 
     def Heading_controller(self,ref_heading,current_eta,Kp=0,Ki=0,Kd=0):
 
@@ -71,24 +73,24 @@ class USVController():
         if pid_method == 0:
             # Velocity PID
             # Propotion Term
-            self.vU_p=Kp*delta_error
+            self.U_p=Kp*delta_error
             # Integral Term
-            self.vU_i = Ki*self.speed_error
+            self.U_i = Ki*self.speed_error
             # Control Signal 
-
-            self.U = U_f+self.vU_p+self.vU_i
+            self.U = U_f+self.U_p+self.U_i
             self.prev_U = self.U
-            self.prev_error=self.error
+            self.prev_error=self.speed_error
+            print('control signal',self.U)
             return self.U
 
         if pid_method==1:
-            # Positional PID
-            # Proportion Term 
+        # Positional PID
+        # Proportion Term 
             self.U_p = Kp*self.speed_error
             # Derivative Term 
             self.U_d = Kd*(self.speed_error-self.prev_speed_error)
             self.prev_speed_error = self.speed_error
-            # Integral Term
+            # Integral Term     
             if saturation_method  == 0:
                 if self.clamp==False:
                     self.U_i=self.U_i+Ki*self.speed_error
@@ -96,6 +98,7 @@ class USVController():
                     pass
                 # Control Signal 
                 self.U = self.U_p + self.U_d + self.U_i+U_f
+                print('Controller signal',self.U)
                 return self.U 
             if saturation_method ==1 :
                 self.U_i=self.U_i_prev+Ki*self.speed_error
@@ -105,9 +108,11 @@ class USVController():
                 self.U_sat=sorted((-self.saturation_limit, self.U, self.saturation_limit))[1]
                 if self.U!=self.U_sat:
                     self.U_i_prev = self.U_sat-self.U_p-U_f
-                
+            
                 self.prev_error = self.speed_error
                 return self.U_sat
+        
+       
 
         
 
@@ -148,8 +153,10 @@ class USVController():
             self.clamp=True
         else:
             self.clamp=False
-       
+        
         return U
+       
+      
 
     def reset_integral_heading(self,U):
 
@@ -161,9 +168,7 @@ class USVController():
             self.heading_clamp=True
         else:
             self.heading_clamp=False
-       
         return U
-
 
     def Filtred_speed_signal(self,speed_ref):
 

@@ -20,8 +20,8 @@ class LineofSight():
 
         self.sideslip=0.0
         #look heading parameters
-        self.delta_min=3
-        self.delta_max=3
+        self.delta_min=5
+        self.delta_max=5
         self.delta_k=1
         self.U_max =1.5
         self.U_min=0.5
@@ -263,7 +263,7 @@ class LineofSight():
         plt.title([u_control[1],u_control[0],self.var_lookhead_distance,current_eta])
         
         plt.plot(eta[0],eta[1],'bo',label='vahicle position')
-        plt.title(u_control)
+        plt.plot(u_control[1],u_control[0])
         plt.plot(OS_Arr[0],OS_Arr[1],'b-.')
 
         plt.plot(TS_Arr[0],TS_Arr[1],'c-.')

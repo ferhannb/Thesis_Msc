@@ -199,7 +199,7 @@ class Colreg_Define(TargetVehicle):
             if colreg['COLREG']=='Head-on':
                 # print('HEAD_ON')
                 sc='HEAD-ON'
-                mpc_output= self.mpc_collision.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['Wpx'],los_output['Wpy'],math.atan2((los_output['Wpy']-current_eta[1]),(los_output['Wpx']-current_eta[0]))])
+                mpc_output= self.mpc_collision.execute_MPC(init_states,[los_output['U_desired'],0,0,los_output['Wpx'],los_output['Wpy'],math.atan2((los_output['Wpy']-self.current_eta[1]),(los_output['Wpx']-self.current_eta[0]))])
                 if 180<=colreg['RelTarget'] and colreg['RelTarget']<=270:
                     mpc_output= self.mpc_los.execute_MPC(init_states,[0,0,0,los_output['x_los'],los_output['y_los'],los_output['chi_d']])
 
