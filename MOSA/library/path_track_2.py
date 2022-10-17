@@ -23,8 +23,8 @@ class LineofSight():
         self.delta_min=5
         self.delta_max=5
         self.delta_k=1
-        self.U_max =1.5
-        self.U_min=0.5
+        self.U_max =0.5
+        self.U_min=0.0
         self.y_max=20
         self.chi_max=30
         self.k=0
@@ -97,7 +97,7 @@ class LineofSight():
         
 
             if np.sqrt((self.x_closest_ - Wpx[self.k+2])**2+(self.y_closest_-Wpy[self.k+2])**2):
-                print('****___------*******')
+               
                 if dist<=m:  # Waypoint geçişleri için
         
                     self.k+=1
@@ -149,6 +149,7 @@ class LineofSight():
   
         # self.var_lookhead_distance=(self.delta_max-self.delta_min)*math.exp(-self.delta_k*y_e**2)+self.delta_min
         path_curv_radius = self.R_calculator.R_cal(eta)
+        print('Radius of curve',path_curv_radius)
         self.var_lookhead_distance = (abs(y_e)*self.delta_k)+self.delta_min#-path_curv_radius/100
         
 
@@ -197,10 +198,10 @@ class LineofSight():
                 self.y_los = self.y_init[exact_index_location+self.min_index+wk]
 
             else:
-                print('X İNİT[[-1]',self.x_init[-1],'Y İNİT[[-1]',self.y_init[-1])
+          
                 self.x_los = self.x_init[-1]
                 self.y_los = self.y_init[-1]
-                print('BREAK')
+           
                 break
 
                 
@@ -231,18 +232,17 @@ class LineofSight():
         term2=abs(error_angle)/self.chi_max
    
         U_desired = max(self.U_max*(1-term1-term2),self.U_min)
-        
+
         
         
 
         # U_desired = speed_generate(path_curv_radius,sapma) 
-        print('U_Speed',U_desired)
-        print('desired chid',math.degrees(self.chi_d)%360)
+
         output = dict(error_angle=error_angle,U_desired=U_desired,y_e=y_e,chi_d=self.chi_d,x_los=self.x_los,y_los=self.y_los,Wpy=Wpy[self.k+1],Wpx=Wpx[self.k+1])
         return output
 
-    def los_simulation(self,eta,Wpx,Wpy,u_control,x_obs,y_obs,current_eta,OS_Arr,TS_Arr):
-    # def los_simulation(self,eta,Wpx,Wpy,u_control):
+    # def los_simulation(self,eta,Wpx,Wpy,u_control,x_obs,y_obs,current_eta,OS_Arr,TS_Arr):
+    def los_simulation(self,eta,Wpx,Wpy,u_control):
         self.x_pose.append(eta[0])
         self.y_pose.append(eta[1])
 
@@ -254,19 +254,19 @@ class LineofSight():
         plt.ylim([0,40])
         plt.plot(Wpx,Wpy,'ro',label='Waypoints')
 
-        plt.gcf().gca().add_artist(plt.Circle((x_obs,y_obs),2,fill=False))
+        # plt.gcf().gca().add_artist(plt.Circle((x_obs,y_obs),2,fill=False))
 
         plt.plot(self.x_init,self.y_init,'m--')
 
         plt.plot(self.x_pose, self.y_pose,"r--")
 
-        plt.title([u_control[1],u_control[0],self.var_lookhead_distance,current_eta])
+        # plt.title([u_control[1],u_control[0],self.var_lookhead_distance,current_eta])
         
         plt.plot(eta[0],eta[1],'bo',label='vahicle position')
         plt.plot(u_control[1],u_control[0])
-        plt.plot(OS_Arr[0],OS_Arr[1],'b-.')
+        # plt.plot(OS_Arr[0],OS_Arr[1],'b-.')
 
-        plt.plot(TS_Arr[0],TS_Arr[1],'c-.')
+        # plt.plot(TS_Arr[0],TS_Arr[1],'c-.')
 
         plt.plot(self.x_closest,self.y_closest,'co')
         

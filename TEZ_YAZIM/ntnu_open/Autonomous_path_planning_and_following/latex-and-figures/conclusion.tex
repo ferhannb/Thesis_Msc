@@ -1,0 +1,34 @@
+\chapter{Concluding remarks}
+
+\section{Conclusions}
+
+%SLAM: Error in orientation estimation. Current Cartographer setup cannot handle going without lidar detections. Some better tuning required, pose adjustments interfered with path planning and path following.
+
+In this thesis, an autonomous online complete coverage maneuvering system for USVs has been designed, implemented, and tested. The system is intended for use in seabed mapping, and one of the main contributions of this work is a novel approach to online CCPP for variable coverage range sensors. Implementations in ROS are provided as open source packages. 
+
+An approach to sensor fusion with the SLAM system Cartographer has been proposed. Sensor data from lidar, IMU and GNSS are used.
+Experiments revealed what is likely a small error in the incorporation of the orientation from the IMU, which reduced the performance of SLAM. The experiments also revealed that the presented configuration of Cartographer is unable to accurately perform localization with only GNSS and IMU in cases where the lidar cannot detect anything. This makes the approach poorly suited for open marine environments and the use of a short range lidar. It is therefore recommended to use another approach that incorporates GNSS data in a better way, and that does not require detecting something with the lidar at all times.
+
+It has been shown that the low-cost 2D lidar used in the experiments is, by itself, not good enough for reliable obstacle detection in marine environments. Sunlight produces false detections, and some dark objects, such as boats with a black hull, were not detected at all. The range was barely sufficient, and the single horizontal scan plane caused some obstacles to go undetected. It is therefore recommended to make use of additional low-cost sensors like cameras or proximity sensors to ensure more obstacles are detected. Measures must also be taken to reduce false detections of the lidar.
+
+A map processing technique for inflating obstacles has been presented, and shown to work well in both simulations and experiments. Two workspace partitioning methods make use of the processed map. Circular cell partitioning has been presented and simulated with unsatisfactorily results. A square cell partitioning for use with variable coverage range sensors has been proposed and shown to perform well in both simulations and experiments.
+
+Two CCPP methods have also been presented. A method based on BINN yielded inefficient paths in simulations, but has proved potential in other works of the literature. The proposed boustrophedon motions method performed well in both simulations and experiments, and shows great potential for real-world applications. Further development to increase the method's robustness, especially towards inaccuracies, is recommended.
+
+An approach to ensure feasible paths is also presented, which together with an LOS guidance law perform path-following control of the USV. The USV managed to track the paths well in simulations, but resulted in some larger deviations in the experiments. The performance was still good, but poor localization in the experiments makes accurate conclusions about the performance hard. 
+
+The complete system has been tested in both simulations and real-world experiments with the Otter USV. The system performed well in simulations, and was shown to efficiently achieve complete coverage of completely unknown static environments. In real-world experiments, localization and mapping suffered from inaccuracies, but the rest of the system performed satisfactorily, including the proposed methods for CCPP, feasible path generation and path following. 
+
+In conclusion, the proposed system performed satisfactorily and achieved complete coverage in simulations, and in real-world experiments under certain conditions. However, the sensor fusion and SLAM system did not perform satisfactorily in real-world experiments and should be improved.
+
+\section{Further work}
+
+The proposed system's ability to handle a varying coverage range has only been verified in simulations. Further testing of the system should include experimental testing with a multibeam echosounder in a variable depth environment. Testing in dynamic environments with moving obstacles is also left undone. For increased safety, the system should be improved to be able to discern between moving and stationary obstacles. In particular, the system should be in compliance with the Convention on the International Regulations for Preventing Collisions at Sea (COLREGs).
+
+Further development should aim to increase the efficiency of the complete coverage paths even more. This could, for instance, be done by incorporating the ideas of \citet{galceran2012efficient} for choosing the best sweeping direction, although it would have to be done online without any prior knowledge. As suggested in the same paper, another improvement would be segmentation of the target region into several smaller similar-depth regions. This would also have to be done online. Implementing these extensions would result in an autonomous system that incorporates many of the best practices of hydrographic surveying.
+
+Further development of the system will also require the improvement of the sensor fusion and SLAM system. Additional low-cost sensors such as cameras or ultrasonic proximity sensors should be added to complement the lidar. If cost is not an issue, a reliable 3D lidar or radar should also be considered. The improved system will need to be able to perform accurate localization with only GNSS and IMU, since marine operations often involve featureless wide-open areas where sensors such as lidar, camera and proximity sensors often detect nothing. It should also be considered whether SLAM is really necessary. If GNSS and IMU provide sufficiently accurate localization, then sensors such as lidar, camera and proximity sensors are perhaps best used only for mapping and obstacle detection.
+
+
+
+

@@ -1,0 +1,868 @@
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20190609192815+02'00'
+InfoBegin
+InfoKey: PTEX.Fullbanner
+InfoValue: This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) kpathsea version 6.2.3
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20190609192815+02'00'
+InfoBegin
+InfoKey: Creator
+InfoValue: LaTeX with hyperref package
+InfoBegin
+InfoKey: Producer
+InfoValue: pdfTeX-1.40.18
+PdfID0: 21cd4b6f2de2b37d7fb02b1306a3b9b9
+PdfID1: 21cd4b6f2de2b37d7fb02b1306a3b9b9
+NumberOfPages: 94
+BookmarkBegin
+BookmarkTitle: MSc thesis description
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: Abstract
+BookmarkLevel: 1
+BookmarkPageNumber: 3
+BookmarkBegin
+BookmarkTitle: Sammendrag
+BookmarkLevel: 1
+BookmarkPageNumber: 4
+BookmarkBegin
+BookmarkTitle: Preface
+BookmarkLevel: 1
+BookmarkPageNumber: 5
+BookmarkBegin
+BookmarkTitle: Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 6
+BookmarkBegin
+BookmarkTitle: List of Figures
+BookmarkLevel: 1
+BookmarkPageNumber: 9
+BookmarkBegin
+BookmarkTitle: Abbreviations
+BookmarkLevel: 1
+BookmarkPageNumber: 11
+BookmarkBegin
+BookmarkTitle: Nomenclature
+BookmarkLevel: 1
+BookmarkPageNumber: 12
+BookmarkBegin
+BookmarkTitle: Introduction
+BookmarkLevel: 1
+BookmarkPageNumber: 14
+BookmarkBegin
+BookmarkTitle: Background
+BookmarkLevel: 2
+BookmarkPageNumber: 14
+BookmarkBegin
+BookmarkTitle: Objective
+BookmarkLevel: 2
+BookmarkPageNumber: 15
+BookmarkBegin
+BookmarkTitle: Thesis contributions
+BookmarkLevel: 2
+BookmarkPageNumber: 16
+BookmarkBegin
+BookmarkTitle: Scope and limitations
+BookmarkLevel: 2
+BookmarkPageNumber: 17
+BookmarkBegin
+BookmarkTitle: Outline
+BookmarkLevel: 3
+BookmarkPageNumber: 17
+BookmarkBegin
+BookmarkTitle: Limitations
+BookmarkLevel: 3
+BookmarkPageNumber: 18
+BookmarkBegin
+BookmarkTitle: Background and literature review
+BookmarkLevel: 1
+BookmarkPageNumber: 19
+BookmarkBegin
+BookmarkTitle: The Otter USV and its sensor package
+BookmarkLevel: 2
+BookmarkPageNumber: 19
+BookmarkBegin
+BookmarkTitle: The Otter USV
+BookmarkLevel: 3
+BookmarkPageNumber: 19
+BookmarkBegin
+BookmarkTitle: Relevant sensors
+BookmarkLevel: 3
+BookmarkPageNumber: 19
+BookmarkBegin
+BookmarkTitle: Partitioning of the operational workspace
+BookmarkLevel: 2
+BookmarkPageNumber: 22
+BookmarkBegin
+BookmarkTitle: Grid-based decomposition
+BookmarkLevel: 3
+BookmarkPageNumber: 22
+BookmarkBegin
+BookmarkTitle: Morse-based cellular decomposition
+BookmarkLevel: 3
+BookmarkPageNumber: 24
+BookmarkBegin
+BookmarkTitle: Relevant methods for CCPP
+BookmarkLevel: 2
+BookmarkPageNumber: 25
+BookmarkBegin
+BookmarkTitle: Feasible path design
+BookmarkLevel: 2
+BookmarkPageNumber: 27
+BookmarkBegin
+BookmarkTitle: Polynomial approximation
+BookmarkLevel: 3
+BookmarkPageNumber: 27
+BookmarkBegin
+BookmarkTitle: Dubins path
+BookmarkLevel: 3
+BookmarkPageNumber: 27
+BookmarkBegin
+BookmarkTitle: Bezier curves
+BookmarkLevel: 3
+BookmarkPageNumber: 28
+BookmarkBegin
+BookmarkTitle: Problem formulation
+BookmarkLevel: 1
+BookmarkPageNumber: 31
+BookmarkBegin
+BookmarkTitle: Sensor fusion and SLAM
+BookmarkLevel: 1
+BookmarkPageNumber: 33
+BookmarkBegin
+BookmarkTitle: Sensors and drivers
+BookmarkLevel: 2
+BookmarkPageNumber: 33
+BookmarkBegin
+BookmarkTitle: Lidar
+BookmarkLevel: 3
+BookmarkPageNumber: 33
+BookmarkBegin
+BookmarkTitle: IMU
+BookmarkLevel: 3
+BookmarkPageNumber: 34
+BookmarkBegin
+BookmarkTitle: GNSS
+BookmarkLevel: 3
+BookmarkPageNumber: 35
+BookmarkBegin
+BookmarkTitle: MBES
+BookmarkLevel: 3
+BookmarkPageNumber: 36
+BookmarkBegin
+BookmarkTitle: SLAM with Cartographer
+BookmarkLevel: 2
+BookmarkPageNumber: 37
+BookmarkBegin
+BookmarkTitle: Map processing and workspace partitioning
+BookmarkLevel: 1
+BookmarkPageNumber: 38
+BookmarkBegin
+BookmarkTitle: Map processing and rolling window
+BookmarkLevel: 2
+BookmarkPageNumber: 38
+BookmarkBegin
+BookmarkTitle: Circular cell partitioning
+BookmarkLevel: 2
+BookmarkPageNumber: 40
+BookmarkBegin
+BookmarkTitle: Square cell partitioning
+BookmarkLevel: 2
+BookmarkPageNumber: 42
+BookmarkBegin
+BookmarkTitle: Representing the varying coverage range of the MBES
+BookmarkLevel: 3
+BookmarkPageNumber: 43
+BookmarkBegin
+BookmarkTitle: Complete coverage path planning
+BookmarkLevel: 1
+BookmarkPageNumber: 45
+BookmarkBegin
+BookmarkTitle: Bio-inspired neural network
+BookmarkLevel: 2
+BookmarkPageNumber: 45
+BookmarkBegin
+BookmarkTitle: Neural network model
+BookmarkLevel: 3
+BookmarkPageNumber: 45
+BookmarkBegin
+BookmarkTitle: Using the neural network for path planning
+BookmarkLevel: 3
+BookmarkPageNumber: 47
+BookmarkBegin
+BookmarkTitle: Boustrophedon motions
+BookmarkLevel: 2
+BookmarkPageNumber: 48
+BookmarkBegin
+BookmarkTitle: Constructing the boustrophedon motion
+BookmarkLevel: 3
+BookmarkPageNumber: 49
+BookmarkBegin
+BookmarkTitle: Determining the backtracking point
+BookmarkLevel: 3
+BookmarkPageNumber: 50
+BookmarkBegin
+BookmarkTitle: Planning a path to the backtracking point
+BookmarkLevel: 3
+BookmarkPageNumber: 51
+BookmarkBegin
+BookmarkTitle: Guidance and path generation
+BookmarkLevel: 1
+BookmarkPageNumber: 53
+BookmarkBegin
+BookmarkTitle: Feasible path generation using straight lines and arc segments
+BookmarkLevel: 2
+BookmarkPageNumber: 53
+BookmarkBegin
+BookmarkTitle: Turning direction
+BookmarkLevel: 3
+BookmarkPageNumber: 54
+BookmarkBegin
+BookmarkTitle: Center of turning circle
+BookmarkLevel: 3
+BookmarkPageNumber: 54
+BookmarkBegin
+BookmarkTitle: Tangent point
+BookmarkLevel: 3
+BookmarkPageNumber: 54
+BookmarkBegin
+BookmarkTitle: Generating the path
+BookmarkLevel: 3
+BookmarkPageNumber: 55
+BookmarkBegin
+BookmarkTitle: Curved path line-of-sight guidance law with time-varying lookahead distance
+BookmarkLevel: 2
+BookmarkPageNumber: 56
+BookmarkBegin
+BookmarkTitle: Cross-track error
+BookmarkLevel: 3
+BookmarkPageNumber: 56
+BookmarkBegin
+BookmarkTitle: Guidance law
+BookmarkLevel: 3
+BookmarkPageNumber: 57
+BookmarkBegin
+BookmarkTitle: Time-varying lookahead distance
+BookmarkLevel: 3
+BookmarkPageNumber: 57
+BookmarkBegin
+BookmarkTitle: Speed assignment
+BookmarkLevel: 3
+BookmarkPageNumber: 58
+BookmarkBegin
+BookmarkTitle: Interfacing with the Otter USV's thrusters
+BookmarkLevel: 3
+BookmarkPageNumber: 58
+BookmarkBegin
+BookmarkTitle: Simulations
+BookmarkLevel: 1
+BookmarkPageNumber: 59
+BookmarkBegin
+BookmarkTitle: Simulator
+BookmarkLevel: 2
+BookmarkPageNumber: 59
+BookmarkBegin
+BookmarkTitle: Map generation with SLAM
+BookmarkLevel: 2
+BookmarkPageNumber: 59
+BookmarkBegin
+BookmarkTitle: Complete coverage maneuvering with boustrophedon motions
+BookmarkLevel: 2
+BookmarkPageNumber: 60
+BookmarkBegin
+BookmarkTitle: Constant coverage range
+BookmarkLevel: 3
+BookmarkPageNumber: 60
+BookmarkBegin
+BookmarkTitle: Varying coverage range
+BookmarkLevel: 3
+BookmarkPageNumber: 63
+BookmarkBegin
+BookmarkTitle: Complete coverage maneuvering with bio-inspired neural network
+BookmarkLevel: 2
+BookmarkPageNumber: 64
+BookmarkBegin
+BookmarkTitle: Discussion
+BookmarkLevel: 2
+BookmarkPageNumber: 66
+BookmarkBegin
+BookmarkTitle: Sensor fusion and SLAM
+BookmarkLevel: 3
+BookmarkPageNumber: 66
+BookmarkBegin
+BookmarkTitle: CCPP with boustrophedon motions
+BookmarkLevel: 3
+BookmarkPageNumber: 67
+BookmarkBegin
+BookmarkTitle: CCPP with bio-inspired neural network
+BookmarkLevel: 3
+BookmarkPageNumber: 68
+BookmarkBegin
+BookmarkTitle: Path following
+BookmarkLevel: 3
+BookmarkPageNumber: 69
+BookmarkBegin
+BookmarkTitle: Experiments
+BookmarkLevel: 1
+BookmarkPageNumber: 71
+BookmarkBegin
+BookmarkTitle: Experimental setup
+BookmarkLevel: 2
+BookmarkPageNumber: 71
+BookmarkBegin
+BookmarkTitle: Complete coverage maneuvering with boustrophedon motions
+BookmarkLevel: 2
+BookmarkPageNumber: 72
+BookmarkBegin
+BookmarkTitle: First experiment
+BookmarkLevel: 3
+BookmarkPageNumber: 72
+BookmarkBegin
+BookmarkTitle: Second experiment
+BookmarkLevel: 3
+BookmarkPageNumber: 73
+BookmarkBegin
+BookmarkTitle: Discussion
+BookmarkLevel: 2
+BookmarkPageNumber: 76
+BookmarkBegin
+BookmarkTitle: Sensor fusion and SLAM
+BookmarkLevel: 3
+BookmarkPageNumber: 76
+BookmarkBegin
+BookmarkTitle: CCPP with boustrophedon motions
+BookmarkLevel: 3
+BookmarkPageNumber: 77
+BookmarkBegin
+BookmarkTitle: Path following
+BookmarkLevel: 3
+BookmarkPageNumber: 79
+BookmarkBegin
+BookmarkTitle: Concluding remarks
+BookmarkLevel: 1
+BookmarkPageNumber: 80
+BookmarkBegin
+BookmarkTitle: Conclusions
+BookmarkLevel: 2
+BookmarkPageNumber: 80
+BookmarkBegin
+BookmarkTitle: Further work
+BookmarkLevel: 2
+BookmarkPageNumber: 81
+BookmarkBegin
+BookmarkTitle: Bibliography
+BookmarkLevel: 1
+BookmarkPageNumber: 81
+BookmarkBegin
+BookmarkTitle: Cartographer configuration
+BookmarkLevel: 1
+BookmarkPageNumber: 89
+BookmarkBegin
+BookmarkTitle: Source code
+BookmarkLevel: 1
+BookmarkPageNumber: 91
+BookmarkBegin
+BookmarkTitle: Complete coverage maneuvering system
+BookmarkLevel: 2
+BookmarkPageNumber: 91
+BookmarkBegin
+BookmarkTitle: Simulator
+BookmarkLevel: 2
+BookmarkPageNumber: 92
+BookmarkBegin
+BookmarkTitle: Running the code
+BookmarkLevel: 2
+BookmarkPageNumber: 92
+BookmarkBegin
+BookmarkTitle: Playing back logged data
+BookmarkLevel: 2
+BookmarkPageNumber: 93
+BookmarkBegin
+BookmarkTitle: Video from the first experiment
+BookmarkLevel: 1
+BookmarkPageNumber: 94
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 4
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 5
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 6
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 7
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 8
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 9
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 10
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 11
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 12
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 13
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 14
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 15
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 16
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 17
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 18
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 19
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 20
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 21
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 22
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 23
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 24
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 25
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 26
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 27
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 28
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 29
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 30
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 31
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 32
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 33
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 34
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 35
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 36
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 37
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 38
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 39
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 40
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 41
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 42
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 43
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 44
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 45
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 46
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 47
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 48
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 49
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 50
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 51
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 52
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 53
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 54
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 55
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 56
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 57
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 58
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 59
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 60
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 61
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 62
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 63
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 64
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 65
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 66
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 67
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 68
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 69
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 70
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 71
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 72
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 73
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 74
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 75
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 76
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 77
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 78
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 79
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 80
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 81
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 82
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 83
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 84
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 85
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 86
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 87
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 88
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 89
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 90
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 91
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 92
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 93
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageMediaBegin
+PageMediaNumber: 94
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.276 841.89
+PageMediaDimensions: 595.276 841.89
+PageLabelBegin
+PageLabelNewIndex: 1
+PageLabelStart: 1
+PageLabelNumStyle: LowercaseRomanNumerals
+PageLabelBegin
+PageLabelNewIndex: 14
+PageLabelStart: 1
+PageLabelNumStyle: DecimalArabicNumerals
+PageLabelBegin
+PageLabelNewIndex: 89
+PageLabelStart: 1
+PageLabelNumStyle: UppercaseRomanNumerals

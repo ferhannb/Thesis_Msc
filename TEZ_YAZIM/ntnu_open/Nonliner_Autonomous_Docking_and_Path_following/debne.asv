@@ -1,0 +1,18 @@
+X=[];
+Y=[];
+x_dot_old=zeros(12,1);
+x_dot_old=zeros(12,1);
+x=zeros(12,1);
+for i=1:1500
+   n=[100,100];
+   t=0:0.1:150;
+   
+   [x_dot,thrust]=otter(x,n,0,[0 0 0],0,0);
+   x=(x_dot-x_dot_old)/0.1
+   x_dot_old=x_dot;
+   X_dot(i)=x(7);
+   Y_dot(i)=x(8);
+   
+  
+   
+end

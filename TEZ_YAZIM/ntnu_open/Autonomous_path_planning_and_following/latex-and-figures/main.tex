@@ -1,0 +1,105 @@
+\documentclass[11pt,oneside,a4paper]{book}
+
+%% packages
+\usepackage[norsk,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref} % clickable citations
+\usepackage{natbib} % references with harvard style
+\usepackage{subcaption} % subfigures
+\usepackage{bm} % bold symbols
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem} % itemize icon
+\usepackage{pifont} % itemize icon
+%\usepackage{parskip} % avsnitt med mellomrom, ikke innrykk
+\usepackage{todonotes}
+\usepackage{pdfpages}
+\usepackage{mathtools}
+\usepackage{placeins}
+\usepackage[toc,page]{appendix}
+\usepackage{tcolorbox}
+\usepackage{longtable}
+\usepackage{siunitx}
+\usepackage[pass]{geometry} % pass disables most options. Allows use of \newgeometry{} and \restoregeometry on single pages without affecting the rest of the document. https://tex.stackexchange.com/a/179122/170212
+\usepackage{listings}
+
+\lstdefinestyle{myLuastyle}
+{
+  language         = {[5.2]Lua},
+  basicstyle       = \small,
+  showstringspaces = false,
+  upquote          = true,
+  tabsize=4,
+  frame=single,
+  columns=fullflexible,
+}
+
+\lstset{style=myLuastyle}
+
+
+%% commands
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\DeclareMathOperator*{\argmax}{arg\!max}
+\DeclareMathOperator*{\argmin}{arg\!min}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{Master Thesis}
+\author{Jan Henrik Lenes}
+\date{Spring 2019}
+
+%% setup
+\setcitestyle{authoryear}
+
+\begin{document}
+
+%\pagestyle{empty}
+\pagenumbering{roman} 				
+\setcounter{page}{1}
+
+\addcontentsline{toc}{chapter}{MSc thesis description}
+\includepdf[pages=-]{msc-desc2.pdf}
+
+\input{abstract.tex}
+\input{sammendrag.tex}
+\input{preface.tex}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures	
+								
+\input{abbreviations.tex}
+\input{nomenclature.tex}
+
+\pagenumbering{arabic} 				
+\setcounter{page}{1}
+
+
+\input{introduction.tex}
+\input{literature_review.tex}
+\input{problem_formulation.tex}
+\input{slam.tex}
+\input{workspace_partition.tex}
+\input{ccpp.tex}
+\input{path_following.tex}
+\input{simulations.tex}
+\input{experiments.tex}
+\input{conclusion.tex}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{elsarticle-harv}
+\bibliography{bibliography}
+
+\input{appendix.tex}
+
+\end{document}

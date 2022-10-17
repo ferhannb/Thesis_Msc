@@ -1,0 +1,24 @@
+\begin{otherlanguage}{norsk}
+
+\newgeometry{top=2.5cm,right=1.7in,left=1.7in,bottom=2.5cm}
+
+\section*{Sammendrag\\[2ex]\large\normalfont{({\itshape Norwegian translation of the abstract})}}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Sammendrag}
+
+\noindent Manøvrering med full dekning krever planlegging og følging av en bane slik at en observasjonssensor eller robotdel dekker hele arbeidsområdet. Utformingen av baner med full dekning er et viktig problem ved kartlegging av havbunnen og mange andre anvendelser innen robotikk. Anvendelsen av dekningsalgoritmer har vært svært vellykket innen landbasert robotikk som robotstøvsugere og -gressklippere. Dekningsalgoritmer kan generelt klassifiseres som enten offline eller online. Offline algoritmer antar full forkunnskap om omgivelsene, mens online algoritmer benytter seg utelukkende av informasjon innhentet fra måleinstrumenter på roboten.
+
+De fleste dekningsalgoritmer er offline algoritmer, selv for robotgressklippere. Online dekningsalgoritmer for marine overflatefartøy er enda vanskeligere å finne. Eksisterende metoder for kartlegging av havbunnen krever som oftest forhåndskunnskaper om området før kartleggingen kan begynne. Denne avhandlingen ønsker å løse dette problemet, og omhandler derfor utvikling og testing av et online system for manøvrering med full dekning til bruk i kartlegging av havbunnen med ubemannede overflatefartøy.
+
+Det utviklede systemet bruker en billig 2D lidar og andre måle\-instru\-menter for posisjons- og orienteringsbestemmelse til samtidig lokalisering og kartlegging av omgivelsene. Denne informasjonen brukes videre av en online dekningsalgoritme som planlegger en kollisjonsfri bane gjennom arbeidsområdet. To forskjellige dekningsalgoritmer er vurdert. Én er basert på et bioinspirert nevralt nettverk, og den andre på å generere enkle gressklippermønster. Det ubemannede overflatefartøyets fart og svingeradius brukes til å sørge for at de genererte banene er gjennomførbare. En siktlinjebasert fartøystyringsmetode sørger til slutt for at fartøyet følger den genererte banen.
+
+Systemet har blitt implementert ved bruk av Robot Operating System, og er publisert som åpen kildekode. Systemet har blitt testet og verifisert i simuleringer og virkelige eksperimenter med det ubemannede fartøyet Otter USV. Dekningsalgoritmen basert på gressklippermønster ga tilfredsstillende resultater, mens algoritmen basert på det bioinspirerte nevrale nettverket genererte ineffektive baner. Metodene for å sørge for gjennomførbare baner og styring av fartøyet fungerte også tilfredsstillende. Det foreslåtte systemet for fusjon av data fra måleinstrumentene var tilstrekkelig under visse forhold, men generelt ikke godt nok i inkluderingen av posisjonsdata fra GPS. Videre var ikke den billige 2D lidaren god nok for pålitelige objektdetektering i marine omgivelser.
+
+Oppsummert så fungerte det utviklede systemet godt og oppnådde full dekning i simuleringer og under visse forhold også i virkelige eksperimenter. Metoden for fusjon av data fra måleinstrumentene fungerte imidlertid ikke godt nok og må forbedres.
+
+\end{otherlanguage}
+
+\restoregeometry
+
+\clearpage
+

@@ -1,0 +1,27 @@
+\section*{Abstract}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Abstract}
+
+%The cover and the title page are generated automatically when you complete your thesis (see innsida.ntnu.no/masteroppgave), so the first two pages in the thesis you submit will be the Abstract and the Sammendrag.
+
+%Write the Abstract for your thesis here. The Abstract should fit on one page.
+
+%Purpose, issue
+Complete coverage maneuvering requires planning and following a path such that a sensor or end-effector covers every part of the workspace. The design of complete coverage paths is an essential problem in seabed mapping and many other robotic applications. The application of coverage algorithms has been very successful in land-based robots such as lawnmowers and vacuum cleaners. Independently, coverage algorithms can be classified as either offline or online. Offline algorithms assume full prior knowledge of the environment, while online algorithms rely on real-time sensor measurements.
+
+Most complete coverage path planning (CCPP) algorithms are offline, their online use is not common, even for lawnmowers. Online CCPP approaches for marine surface vehicles are even harder to find. Existing methods for seabed mapping usually require information about the target region before the mapping can begin. To address this issue, this thesis considers the design and testing of an online complete coverage maneuvering system for seabed mapping with unmanned surface vehicles (USVs).
+
+%Scope and Limitations
+%Methods used
+The proposed system uses a low-cost 2D lidar and vehicle motion sensors for simultaneous localization and mapping (SLAM). The information gathered from these onboard sensors is used by an online CCPP method in order to generate a collision-free path. Two different online CCPP methods are reviewed. One is based on a bio-inspired neural network (BINN), and the other on boustrophedon motions, also known as lawnmower patterns. The feasibility of the generated path is ensured by taking into account the USV's turning radius and speed. Finally, a line-of-sight guidance law generates continuous course and speed control to ensure that the USV tracks the generated path. 
+
+%The main results
+The proposed system has been implemented using the Robot Operating System (ROS) middleware, and is provided as open source packages. The system has been tested and verified in simulations and real-world experiments with the Otter USV. Results showed that the boustrophedon motions CCPP method performed satisfactorily, while the BINN CCPP method tended to generate inefficient paths. Methods for ensuring a feasible path and guidance managed to successfully make the Otter USV track the generated path. The proposed sensor fusion and SLAM system performed satisfactorily in certain situations, but was in general not good enough with the incorporation of IMU and GNSS data. Furthermore, the low-cost 2D lidar used in the experiments was, by itself, not capable of providing the detail necessary for accurate obstacle detection in marine environments. 
+
+%Conclusions and recommendations
+In conclusion, the proposed system performed satisfactorily and achieved complete coverage in simulations, and in real-world experiments under certain conditions. However, the sensor fusion and SLAM system did not perform satisfactorily in real-world experiments and should be improved. 
+
+\clearpage
+
+
+

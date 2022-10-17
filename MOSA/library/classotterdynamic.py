@@ -44,17 +44,25 @@ U_p_list = []
 U_i_list = []
 U_total_list = []
 time_=0
-Kp_heading = -3.5
-Ki_heading = 0
-Kd_heading = 0
-Kp_speed = 20     # velocity pid 60 #Positional(pid_method=1)  20
-Ki_speed = 0.08   # velocity pid 8  #Positional (pid_method=1) 0.08
+Kp_heading = -4.5
+Ki_heading =0.001
+Kd_heading = -30
+
+pid_metot = 0
+if pid_metot == 0:  # velocity
+    Kp_speed = 60
+    Ki_speed = 8
+elif pid_metot ==1: # position
+    Kp_speed = 20
+    Ki_speed = 0.08
+# Kp_speed = 20     # velocity pid 60 #Positional(pid_method=1)  20
+# Ki_speed = 0.08   # velocity pid 8  #Positional (pid_method=1) 0.08
 Kd_speed = 0
 
-for _ in range(3000):
+for _ in range(2000):
     time_+=0.02
 
-    ### REFERANS VALUES FOR SPEED AND HEADING
+    ### REFERANS HIZ ve HEADING
     
 
     if _  <500:
@@ -68,16 +76,16 @@ for _ in range(3000):
     elif _<3000:
         ref_speed=1.75
     
-    if _  <500:
-        ref_heading = 30
-    elif _ <800:
-        ref_heading = 330
-    elif _<1500:
-        ref_heading = 80
-    elif _<2500:
-        ref_heading = 150
-    elif _<3000:
-        ref_heading=50
+    # if _  <500:
+    #     ref_heading = 30
+    # elif _ <800:
+    #     ref_heading = 70
+    # elif _<1500:
+    #     ref_heading = 330
+    # elif _<2500:
+    #     ref_heading = 50
+    # elif _<3000:
+    #     ref_heading=50
 
     
     ref_heading = 0 
@@ -87,17 +95,17 @@ for _ in range(3000):
     filtred_heading_signal = pid.Filtred_heading_referans(ref_heading)
     filtred_speed_signal = pid.Filtred_speed_signal(ref_speed)
     U_diff = pid.Heading_controller(filtred_heading_signal,vehicle.current_eta,Kp_heading,Ki_heading,Kd_heading)
-    u_avg = pid.Speed_controller(filtred_speed_signal,speed_otter,Kp_speed,Ki_speed,Kd_speed,saturation_method =0,pid_method=0)
+    u_avg = pid.Speed_controller(filtred_speed_signal,speed_otter,Kp_speed,Ki_speed,Kd_speed,saturation_method =1,pid_method=pid_metot) # pid_method 0 pos. 1 velocity
     u_avg=pid.reset_integral(u_avg)
     U_diff=pid.reset_integral_heading(U_diff)
     vehicle.u_control = pid.control_allocation(u_avg,U_diff)
 
-    if _<1000:
-        vehicle.u_control=[104,104]
-    elif _<2000:
-        vehicle.u_control=[-104,-104]
-    elif _<3000:
-        vehicle.u_control=[104,104]
+    # if _<1000:
+    #     vehicle.u_control=[104,104]
+    # elif _<2000:
+    #     vehicle.u_control=[-104,-104]
+    # elif _<3000:
+    #     vehicle.u_control=[104,104]
 
     output = vehicle.function()
     # print(output['heading'])
@@ -138,6 +146,7 @@ fig.add_trace(go.Scatter(x=time_list, y=speed_list,
 fig.add_trace(go.Scatter(x=time_list, y=speed_ref_list,
                     mode='lines',
                     name='cmd hiz'),row=1, col=1)
+                    
 
 
 
@@ -174,10 +183,10 @@ go.Scatter(x=time_list, y=U_i_list,name='U_i'),
 row=3, col=1)
 
 fig.add_trace(
-    go.Scatter(x=time_list, y=heading_list,name='x-y pervane'),row=4, col=1
+    go.Scatter(x=time_list, y=heading_list,name='heading_list'),row=4, col=1
     )
 fig.add_trace(
-    go.Scatter(x=time_list, y=heading_ref_list,name='x-y pervane'),row=4, col=1
+    go.Scatter(x=time_list, y=heading_ref_list,name='heading_ref_list'),row=4, col=1
     )
 fig.update_layout( title_text="Sinus referansi")
 # plotly.offline.plot(fig, filename="Kare-2.html")

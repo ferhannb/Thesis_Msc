@@ -1,0 +1,68 @@
+\chapter*{Nomenclature}
+\addcontentsline{toc}{chapter}{Nomenclature}
+
+\noindent 
+\begin{center}
+\begin{longtable}{ p{.10\textwidth} p{.85\textwidth} p{.05\textwidth} }
+	\textbf{Symbol} & \textbf{Description} & \textbf{Unit} \\\\
+	$c_p$ & Coverage range in port direction. & m \\
+	$c_s$ & Coverage range in starboard direction. & m \\
+	$\alpha$ & Angle of detection point from the MBES. & rad \\
+	$f(\alpha)$ & Distance to detection point from the MBES. & m \\	
+	$r_{max}$ & Radius of circle circumscribing the USV's footprint. & m \\
+	$r_i$ & Obstacle inflation radius. & m \\
+	$x_w$ & The rectangular workspace's length along the x-axis. & m \\
+	$y_w$ & The rectangular workspace's length along the y-axis. & m \\
+	$r_c$ & Radius of circles in the circular cell partition. & m \\
+	$f(r,c)$ & Flag indicating the status of a cell at row $r$ and column $c$ in the workspace partition. & 1 \\
+	$e_{cell}$ & Size of cells in the square cell partition. & m \\
+	$\mathbb{R}$ & The set of real numbers. & - \\
+	$x_i$ & Neural activity of the $i$th neuron. & 1 \\
+	$p_i$ & Position $(x_i,y_i)$ of the $i$th neuron. & (m,m) \\
+	$r_0$ & Radius of the neighborhood in the neural network. & m \\
+	$A$ & Passive decay rate in the neural network. & 1 \\
+	$B$ & Upper bound of neural activity. & 1 \\
+	$D$ & Lower bound of neural activity. & 1 \\
+	$E$ & Upper and lower bound of external input to neural network. & 1\\
+	$\lambda_i$ & Scaling factor for the external input to the $i$th neuron. & 1 \\
+	$I_i$ & External input to $i$th neuron. & 1 \\
+	$w_{ij}$ & Connection weight between the $i$th and $j$th neuron. & 1 \\
+	$\mu$ & Scaling factor for connection weight between neurons. & 1 \\
+	$\lambda$ & Tuning constant for how much to penalize turning in the neural network. & 1 \\
+	$p_q$ & Initial position $(x_q,y_q)$ of simple Dubins path. & (m,m) \\
+	$\theta_q$ & Initial heading of simple Dubins path. & rad \\
+	$p_n$ & Final position $(x_n,y_n)$ of simple Dubins path. & (m,m) \\
+	$\theta_n$ & Final heading of simple Dubins path. & rad \\
+	$\rho$ & Turning radius in simple Dubins path. & m \\
+	$\rho_{min}$ & Minimum feasible turning radius of the USV. & m \\
+	$\delta$ & Turning direction. & 1 \\
+	$p_c$ & Position $(x_c,y_c)$ of center of turning circle. & (m,m) \\
+	$p_l$ & Position $(x_l,y_l)$ of tangent point on turning circle. & (m,m) \\
+	$p$ & Position $(x,y)$ of USV. & (m,m) \\
+	$p_p$ & Point $(x_p, y_p)$ on path that is closest to the USV. & (m,m) \\
+	$\gamma_p$ & Path-tangential angle. & rad \\
+	$y_e$ & Cross-track error. & m \\
+	$\Delta(t)$ & Lookahead distance. & m \\
+	$\chi$ & Course angle of the USV. & rad \\
+	$\chi_d$ & Desired course angle. & rad \\
+	$\tilde{\chi}$ & Error in course angle & rad \\
+	$\psi$ & Heading angle of the USV. & rad \\
+	$\psi_d$ & Desired heading angle. & rad \\
+	$\beta$ & Sideslip angle. & rad \\
+	$\Delta_{max}$ & Maximum lookahead distance. & m \\
+   	$\Delta_{min}$ & Minimum lookahead distance. & m \\
+   	$K_\Delta$ & Convergence rate of time-varying lookahead distance. & 1\\ 
+   	$U_d$ & Desired speed. & m/s \\
+   	$U_{max}$ & Maximum desired speed. & m/s\\
+   	$U_{min}$ & Minimum desired speed. & m/s \\
+   	$y_{max}$ & Maximum allowed cross-track error in speed assignment. & m \\
+   	$\chi_{max}$ & Maximum allowed course angle error in speed assignment. & rad \\
+\end{longtable}
+\end{center}
+
+\thispagestyle{plain}
+
+
+\clearpage
+
+\pagestyle{headings}

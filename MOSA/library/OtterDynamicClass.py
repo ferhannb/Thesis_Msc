@@ -298,7 +298,7 @@ class Otter:
 
 
         nu_dot = np.matmul(self.Minv, sum_tau)  # USV dynamics
-        print('nu_dot',nu_dot)
+
         n_dot = (u_control - n) / self.T_n  # propeller dynamics
         trim_dot = (self.trim_setpoint - self.trim_moment) / 5  # trim dynamics
 

@@ -15,11 +15,11 @@ los_numeric = LineofSightfirst()
 pid = USVController()
 
 vehicle.initialize_otter()
-vehicle.current_eta=np.array([10,10,0,0,0,math.radians(75)])
+vehicle.current_eta=np.array([10,10,0,0,0,math.radians(50)])
 # Wpx = [10,20,30,40]
 # Wpy = [10,20,10,20]
-Wpx = [10,20,30,20]
-Wpy = [10,20,30,40]
+Wpx = [10,15,20,25,30]
+Wpy = [10,12.5,10,7.5,10]
 # Wpx = [10,30,50,70]
 # Wpy = [10,20,10,40]
 ### non-index method
@@ -34,9 +34,9 @@ Kd_speed = 0
 
 ### Heading ###
 
-Kp_heading=-3.5
-Ki_heading=0
-Kd_heading=0
+Kp_heading=-4.5
+Ki_heading=-0.0000
+Kd_heading=-20
 
 
 
@@ -57,11 +57,12 @@ pervane_sancak = []
 chi_d_list = []
 actualheading_list = []
 timeOtter=[]
+refheading_list = []
 
 los_index.path_generate(Wpx,Wpy) # self.coeff ,self.x_init, self.y_init,self.Wp_x_init,self.Wp_y_init
 Time = 0.0
 e,a,b,c,d = generate_curve(Wpx,Wpy,0.01)
-for i in range(3000):
+for i in range(2500):
 
     Time+=0.02
     timeOtter.append(Time)
@@ -79,9 +80,14 @@ for i in range(3000):
     u_avg = pid.Speed_controller(filtred_speed_signal,speed_otter,Kp_speed,Ki_speed,Kd_speed,pid_method=1)
     u_avg = pid.reset_integral(u_avg)
     U_diff = pid.reset_integral_heading(U_diff)
+    
     vehicle.u_control = pid.control_allocation(u_avg,U_diff)
+    # if i <750:
+    #     vehicle.u_control = [100,100]
+    # else:
+    #     vehicle.u_control = [-100,100]
     output = vehicle.function()
-
+    
     #### FOR PLOTTING ####
     v_list.append(np.sqrt(vehicle.nu[0]**2+vehicle.nu[1]**2))  # for plotting
     head_list.append(vehicle.current_eta[5]*180/math.pi %360) # for plotting
@@ -98,12 +104,13 @@ for i in range(3000):
     pervane_iskele.append(vehicle.u_actual[1])
     pervane_sancak.append(vehicle.u_actual[0])
     chi_d_list.append(refChi)
+    refheading_list.append(filtred_heading_signal)
     actualheading_list.append(vehicle.current_eta[5]*180/math.pi %360)
 
     
 
 
-    los_index.los_simulation(vehicle.current_eta,Wpx,Wpy,vehicle.u_control)
+    # los_index.los_simulation(vehicle.current_eta,Wpx,Wpy,vehicle.u_control)
 
 
     if los_index.x_los==los_index.x_closest and los_index.y_los == los_index.y_closest:
@@ -145,6 +152,11 @@ plt.figure()
 plt.plot(timeOtter,chi_d_list)
 plt.plot(timeOtter,actualheading_list)
 plt.title('Heading')
+
+
+plt.figure()
+plt.plot(timeOtter,refheading_list)
+plt.title('filtred ref signal')
 
 plt.xlabel('Zaman')
 plt.ylabel('Kontrol Sinyali')

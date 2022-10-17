@@ -1,0 +1,461 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: (MATLAB, The Mathworks, Inc. Version 9.5.0.944444 \(R2018b\). Operating System: Windows 10)
+%%Title: ./simple_dubins_path2.eps
+%%CreationDate: 2019-02-08T12:48:04
+%%Pages: (atend)
+%%BoundingBox:     0     0   421   316
+%%LanguageLevel: 3
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset (Apache XML Graphics Std ProcSet) 1.2 0
+%%Version: 1.2 0
+%%Copyright: (Copyright 2001-2003,2010 The Apache Software Foundation. License terms: http://www.apache.org/licenses/LICENSE-2.0)
+/bd{bind def}bind def
+/ld{load def}bd
+/GR/grestore ld
+/GS/gsave ld
+/RM/rmoveto ld
+/C/curveto ld
+/t/show ld
+/L/lineto ld
+/ML/setmiterlimit ld
+/CT/concat ld
+/f/fill ld
+/N/newpath ld
+/S/stroke ld
+/CC/setcmykcolor ld
+/A/ashow ld
+/cp/closepath ld
+/RC/setrgbcolor ld
+/LJ/setlinejoin ld
+/GC/setgray ld
+/LW/setlinewidth ld
+/M/moveto ld
+/re {4 2 roll M
+1 index 0 rlineto
+0 exch rlineto
+neg 0 rlineto
+cp } bd
+/_ctm matrix def
+/_tm matrix def
+/BT { _ctm currentmatrix pop matrix _tm copy pop 0 0 moveto } bd
+/ET { _ctm setmatrix } bd
+/iTm { _ctm setmatrix _tm concat } bd
+/Tm { _tm astore pop iTm 0 0 moveto } bd
+/ux 0.0 def
+/uy 0.0 def
+/F {
+  /Tp exch def
+  /Tf exch def
+  Tf findfont Tp scalefont setfont
+  /cf Tf def  /cs Tp def
+} bd
+/ULS {currentpoint /uy exch def /ux exch def} bd
+/ULE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add moveto  Tcx uy To add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/OLE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add cs add moveto Tcx uy To add cs add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/SOE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add cs 10 mul 26 idiv add moveto Tcx uy To add cs 10 mul 26 idiv add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/QT {
+/Y22 exch store
+/X22 exch store
+/Y21 exch store
+/X21 exch store
+currentpoint
+/Y21 load 2 mul add 3 div exch
+/X21 load 2 mul add 3 div exch
+/X21 load 2 mul /X22 load add 3 div
+/Y21 load 2 mul /Y22 load add 3 div
+/X22 load /Y22 load curveto
+} bd
+/SSPD {
+dup length /d exch dict def
+{
+/v exch def
+/k exch def
+currentpagedevice k known {
+/cpdv currentpagedevice k get def
+v cpdv ne {
+/upd false def
+/nullv v type /nulltype eq def
+/nullcpdv cpdv type /nulltype eq def
+nullv nullcpdv or
+{
+/upd true def
+} {
+/sametype v type cpdv type eq def
+sametype {
+v type /arraytype eq {
+/vlen v length def
+/cpdvlen cpdv length def
+vlen cpdvlen eq {
+0 1 vlen 1 sub {
+/i exch def
+/obj v i get def
+/cpdobj cpdv i get def
+obj cpdobj ne {
+/upd true def
+exit
+} if
+} for
+} {
+/upd true def
+} ifelse
+} {
+v type /dicttype eq {
+v {
+/dv exch def
+/dk exch def
+/cpddv cpdv dk get def
+dv cpddv ne {
+/upd true def
+exit
+} if
+} forall
+} {
+/upd true def
+} ifelse
+} ifelse
+} if
+} ifelse
+upd true eq {
+d k v put
+} if
+} if
+} if
+} forall
+d length 0 gt {
+d setpagedevice
+} if
+} bd
+/RE { % /NewFontName [NewEncodingArray] /FontName RE -
+  findfont dup length dict begin
+  {
+    1 index /FID ne
+    {def} {pop pop} ifelse
+  } forall
+  /Encoding exch def
+  /FontName 1 index def
+  currentdict definefont pop
+  end
+} bind def
+%%EndResource
+%%BeginResource: procset (Apache XML Graphics EPS ProcSet) 1.0 0
+%%Version: 1.0 0
+%%Copyright: (Copyright 2002-2003 The Apache Software Foundation. License terms: http://www.apache.org/licenses/LICENSE-2.0)
+/BeginEPSF { %def
+/b4_Inc_state save def         % Save state for cleanup
+/dict_count countdictstack def % Count objects on dict stack
+/op_count count 1 sub def      % Count objects on operand stack
+userdict begin                 % Push userdict on dict stack
+/showpage { } def              % Redefine showpage, { } = null proc
+0 setgray 0 setlinecap         % Prepare graphics state
+1 setlinewidth 0 setlinejoin
+10 setmiterlimit [ ] 0 setdash newpath
+/languagelevel where           % If level not equal to 1 then
+{pop languagelevel             % set strokeadjust and
+1 ne                           % overprint to their defaults.
+{false setstrokeadjust false setoverprint
+} if
+} if
+} bd
+/EndEPSF { %def
+count op_count sub {pop} repeat            % Clean up stacks
+countdictstack dict_count sub {end} repeat
+b4_Inc_state restore
+} bd
+%%EndResource
+%%EndProlog
+%%Page: 1 1
+%%PageBoundingBox: 0 0 420 315
+%%BeginPageSetup
+[1 0 0 -1 0 315] CT
+%%EndPageSetup
+GS
+[0.75 0 0 0.75 0 0] CT
+1 GC
+N
+0 0 560 420 re
+f
+GR
+GS
+[0.48 0 0 0.48018 0 113.32318] CT
+[1 0 0 1 0 0] CT
+N
+0 -236 M
+875 -236 L
+875 420 L
+0 420 L
+0 -236 L
+cp
+clip
+GS
+0 0 translate
+560 420 scale
+%AXGBeginBitmap: java.awt.image.BufferedImage
+{{
+/RawData currentfile /ASCII85Decode filter def
+/Data RawData /FlateDecode filter def
+/DeviceRGB setcolorspace
+<<
+  /ImageType 1
+  /Decode [0 1 0 1 0 1]
+  /DataSource Data
+  /Height 420
+  /ImageMatrix [560 0 0 420 0 0]
+  /Width 560
+  /BitsPerComponent 8
+>> image
+} stopped {handleerror} if
+  RawData flushfile
+} exec
+Gb"0W5E6sW)[BbD';8,\J452N5\*:(.GA2&M$nE_3.s(#!Wl8qc3QrH35B?\p(@Mj"=++`U\P83U=\/e
+Iq*\HF]Ueg&DFD6\6/cV];g<[p%/AP%iuf72k/',DnWX9DOZ"=\k]^Vh?!\jCFW1SW_0nZ0&<#rO:#%V
+Acbf7;oP\t*g"!n!#.'YHHm>%UoLHMblj\Ylh1*`4\CdWh+ReUGHhtgP=GT]8j*4u]A7@KAN`YHbhZA$
+8p2po(NMGJJAT8lfCS(h!#XGMj5]rkST#SL6]8oRZ2MP=@O0%q^n>/40(rW(m<77OehA*E,E(j9XZ3:6
+V)kGK"Mb9e;lBKp5VB<E[pfJ*7a9M`M@fj!2!^)7,62c;DRYb`(/t8VMjQ2=TH4(N756P_#=(b@?J'/)
+\JkUcE^b9tPpD8l!Q_+;W[>De2cKdsGF2]mnN*3c!(N93;<eTZH6EcI<K$np=nII6\pdP9!6Cs=mM\<-
+2B/n^!(IagL"%K-+&aJkqA"N8Fn]2RVupF<0hKk5QeUohBb19fF-p86J1Omg"TTCsB!XKk0*&f/:7WAu
+2?>M#UZmJo.[72"!(Lp>-T\;f!#WbEoKq',d9?ahi^A+Obe6L2!#X4boKpGd*<8I=Ggs6OJH-NjF4BuQ
+a&ii[^n@j`H_K.4X$m">cM7dAL'=d]%-1lD!<@jt0tdPe6b=\Y!!%XlEWcAf4a4ak4l1]1!<%daoW68[
+HG"P,5`]eR0A)6bJ:?=??Ee>t!'R?^lA"pt.UgmS!RQaOQFlE%!RQa(N)I.K[N4OQNWA93U_cp3\a;W5
+3<J,fG:n*i3<J,fO^>P10CIY&D[cbU@;OL(5^'+DX]?t8jT1IjS`p:X\=_$W!Q]/bg"`!%32EJRn6EZ)
+(TP0_IN&8[&F"mt:P)-P:s9l/lU?,nhm'T#Y'#a)\DBL8"c3KbXr$>VhLDX:JcN=/TR/=k<FtP1!#OI1
+eG-@@1&u:@D+BRMlh=%-!-$d#HS65;"5l;2FT[_lP9U(KDWp]o!*h@&H3"!uEcM9_H"EBt&uu,m:_]\p
+(BLX=X-'"dJB>s!?EahRJ4@QNJn;.dKN&O=VABZl!K_`?X2-gs;DCf"U:fU'?ld&"7=$,(/P$&m!>>Hk
+24`j3-BA-B/(+f(k`qrqB^uF:J[20i>'>8'>62O<dPq2@[F-,t+JXdh(B@RCl(f*q=KKbZ1Qh;2!6[4,
+oE#"#'^:<#+#TX9D7Q,9^p##r0]`V9e2A=+J?mED]jMdZJ?hUi+a5FhZ]-G"WTKIP8F9B;!6UMkW:?@6
+TECE+j&+hqZ`Q/O@:kX.BG%BL.*RVsN"-0G!>K$Ml%PGj?LChoE3Irk(B>l0*7G8q'P<Bi"TV.MlNnd9
+aq2N_-4PKaU_a$PY.XCY`CBp7PJ4NL9/!56!&IMlHGO&mJ@S4i.!:G?m6ir0#[eDl]hn2WG3\]72?F1]
+Sg>q3Fn--[`'o!Gq![Jor'(8,<5IgQ0(fKXR`\AYFK%cOQX7B38ObP5m,;MXNoJLq?)\n,D?;bS9!nFk
+H9h`0@IBGC?D&REdp-M#Hu1b\,?N)[HH2VV8',ekS=pdX8hX"q(g&st(CB4M'dK2j1HXE,USDig'=_(J
+A=>2]G,hQ?O.[?<$c/(\**o's;NG3<,/')M(&>gXX5'i8fo4NK!MgN8Hu%!S20fD0/52J,`k-V6c'5k"
+bZB'[NV>b&R]2*tSmiNP-;/[D'_Q.R@dpp4N!r4oA=5,4_la\pQTG+G<Q1Fi?$CQO@@Eu./lI`1L*jTQ
+%J:!7:so_Q8tAJ%9)o'V?FX<A<Vf2c]ea("5^$"`/-?"t,O#@3ZBJSp+M4YRU_a$P8:$sGnoXs,LpMH(
+([g>i,_150HD.M-g^P]`/QDghA%?BiC`*@pK1IZjrp5b!K)hK3H=7rN^"f^iQj;l0iPYaX\Q](g"4@R0
+8q4O#SH'Ht0+:S9)rRH4h(HAp!e8;lVarJ"aXKa\8#>ZDRrngp=/6X+(]f_\oE#$G7=$,$.f`[(klh'm
+F4Bt!Ue:d,Uqi-RC4%5ldJthdoYP_&V#a[L'1Pp\g&P4nl%Nhl&/)2qdL29#+=(>TU_fmZ]e61DJ0g:`
+Qp*/7:c8tVF-0cR6Zt_oU)5m&HPW\L!_OcP0JC&OgoUS?RIgO\fi;$`EZBUgU_a$P0"+'0?2u+C82&J8
+S\$$F/=5J$`N[rQ0OKrK&/?gP]iBX:O^9G6lKt#C"D1&JTi?d5J/OJU.%;AA?oiJC<-4^lIO@]?'JEa+
+(kr4"96Fj[ITil1s-%nJMGO);P$TQ.+ZggYmIl0)FBF^7>NphF0k:N"<7f0KdJfcoC:2c3[^k/68/shp
+A9>C"rL7+as%^6Q"*G!Vg[4'%J1OH>Njc"=H=)j7rR"[\!/%;O<Z.q32/'<L7dk8>]H.'*g2'r@U9J?S
+Q`PZ??r.*M]$9M'oa$(F4[)>km][P1]@0@6NrU"r>sGJUd-_dj.O:<Ln/E3C?.U/6U[?I1Sb8*Q'YCkZ
+)[hU4]A7p<N#n&RN/Z7<QL4$hTuEksqrsjR/ucJ=^S-?n$bQ$9)2<j'mHeqWJ:Vg#;<Is?R`-Q:+oqe&
+",u)L(OXbPQ<>J@#d*a9et*7S5o0jk=&i6BA/AM@EZJF2TJ&ga$b74qS>7c8-/AXX-R)G8N4=XaJUonj
+dL.[I!>o0Z\Z>?(!998L!$JHgdL/;<o[Bi#`JYP9?G646pYYj]27$^D$+NJ$Xr(WYCXf+T55F8hs%/KS
+M+RX=gMabf$aUtJ$!];lH6MS$\)2Yh])CfaIpO/MEJT3L*XeJsBR8W:4\AVM.Ga[khgbCqFA,gG#hQM5
+#EB[J\a,Z0o^_+eLPLY/n)!a7N(dB#KBX'P/`Z32E2juXo#i]Np9271](]iJii9]IXT55-T_(QP2p_!i
+p$:*`8iM4leQ78!p")ITb@K;U%VUg3pVP=jGPLO2cec<[1Ybnb=`n!h[0'UsKqTl\UE4jTbr>)$r:.fL
+5Q(#gM\e#f*Zj1PI62*EQmSSOY]/W@epSmknDfQoVRp0LIQ_clR%W8QB-/U*VJ^]gSAk&3lHu([Dpho5
+J,JgBblD,Y1*/<%VB5^4l`]QU0>@3j[)N*-;;S(f:Xu4)s8;K;:HqQtIJ;QAA$uVm/4NAfF@A>rYLfrf
+I/`s)%hB2u3Vqp2In";g!$duM;<(1<hB.1<d?e3hq>L'FgRNg;gAn)8VAF9^#Yp8dX-*VIad?CbgSC"n
+1^YX)hXgm)/4u']qk+A"oRa,<k/BMN:k3ODl\;+d7gN^$H@]PH2Sa]302NM=#+-Y""cAO:P'R6e;H9"S
+!WX*00*%)>N38X(![+6mNuEe1d/Aa!Be=Oo?=4p%^gU-:(KdaUUK3O#46ZoFOs%C/0so^NSs1MA8pULJ
+.7oVToE'+`8MDn57W:taUq3^M2ZsI8]`8j/[L\*>]`:<@dL-%cf1I\5)[Bbu-B-k(l1uu[E(hat4hBk]
+T..:dG.[G;JX\Z7*-r;Fam]?oQ_VQoG?2mR,P?&Z))74ZJ:T+?nFU'=iSr""klho'.S6M$=L,gsc`(]d
+DL,aH2St'AO.hIp(?dH?E%7.r]`>jpRU4=>/s#W+!(/gfJic"Wcq5r.6\$^]-W.=i;7LMIa(F-]*HH?<
+lu5&SmX1,g!_c4M]5q+GGn/"lCFDGo!N%;o2Ughd7u<D!R5U47J17fiM3=Bs2QEcLH3'lr>rV$s0mBOm
+NMI@u?D=3j,V`Xr8*XR8//(JQN8nk3;,`FV4DI"/XE9e('**5;X?0/(Be=Nlg@pY#V!A04QTjP$n<g`'
+Bqo8pdDb`ECJmaF!@BE_ZfZb*ZIZD1`UlLnnSgssH'm'@@/A=7FM4S%0f?(IUVjfDG6fge2KUI32`AlN
+qO"<U9MOh4M)4CMUQt&c6XtZRC8t2.V#)9u>uP3A5K:TEe'*0IDJr.42_Ypg<\!>[O]OK$E&dh4n'^X;
+ksgpDJA/C6U,snqkq85,(/?WTEO=kb%Z=2n&ij,!QDW?%eN.o/G&!gJ,m"uZ<O/'GJQu-4<$EGQ$niCE
+l7UJZ;^6E7&TD&TR*6dr^XcRiPmDmkc31ch%KeXGPfL*MNGtpd_#5JQd*+5@D\Zc.SC+?,p8nCB(NW8i
+3e0s=V_l#/RuRV@&@G(mii([>mT'=G(*e/\XJ]5&OA!/7Ib[RB.0aY?lZH.">VcJD92qjWGj<kTe=VUr
+(&b,fIkihpJ-Cj'<:*,-017Xt>F8S%>B2P<!1n;'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zzzzzzzzzzzzzzzzz!!%P;qEIrl]c-~>
+
+%AXGEndBitmap
+GR
+GR
+GS
+[0.48 0 0 0.48018 268.80003 113.32318] CT
+[1 0 0 1 0 0] CT
+N
+-560 -236 M
+315 -236 L
+315 420 L
+-560 420 L
+-560 -236 L
+cp
+clip
+GS
+0 0 translate
+315 420 scale
+%AXGBeginBitmap: java.awt.image.BufferedImage
+{{
+/RawData currentfile /ASCII85Decode filter def
+/Data RawData /FlateDecode filter def
+/DeviceRGB setcolorspace
+<<
+  /ImageType 1
+  /Decode [0 1 0 1 0 1]
+  /DataSource Data
+  /Height 420
+  /ImageMatrix [315 0 0 420 0 0]
+  /Width 315
+  /BitsPerComponent 8
+>> image
+} stopped {handleerror} if
+  RawData flushfile
+} exec
+Gb"0W^Pc=:('%aYQGu?9\1fPbLF!diET'6[a^<t4Q,/j,AK$3:Pri'eblbLMS'm9"Y$@cBiPL:Gj!$p<
+(FJ@:m#_*^F="%idb^C;qE@<oO3MFTS=MHKcCMRL*1cnQ5+,*!_dWI%pK2sJb[rXc$PeMtFu1++fZ'-1
+@f\2/4bi5mO.e0\eOIcCa5bqW!OgFPa-O)/$S`$3;20\6Ua<.1Kj':8W(ZEW:ca>7Lfp[7R"`,I/_UKb
+g]IScd^3$8*XJtb0ai+9ZVVGm$[%;n*M:M<&7@$^HCum:(SNHj(@!)UTe7d+B<tb/JH/oB:8cC:J;W!L
+Kt>p,Ko.9D6!Y1tTIpRJ:_s9`W/+2YW(U=<7XCSO+M_%+:%9cHTb`Z+K8QJDXIWLm7?'C81"u/BC]Vh$
+8isAi7r\it'b&C<2/G7:MA"qdkMREti#JXu'&shlTZ'qe8#qNc\4MDY/4Zl@MK'mAK7=Q=*4(kH(Y_Oo
+@p9;mP5i0[%jD/!S@7.Z-34KGRFS43>#W=>//237>,jFd=D04bqUDW)$!:jkWqt5I2)S!!h'&+ON`]Oh
+CD*kUUkJ#3]@O?0Sh22mJ.fd-0lOC9]?*:7qt.OH,%.)r9lRWig%]X9:48TL[f(Z@JO-Or:9mTIV?+&V
+=2;[F\Q6"/H#GL>7dpaefV&79[N1NF41JG;`lmMnd^hN5"R.D-4t#%OJJ'JG>6,*^of:,HeXDf\BtncF
+"K^,99"'T$VJW*ATsG<7Y_@NQfp-oc9+u3lqc#m,(6keR4kX_TC!k%X(BPA\F4K*c9s(BXPqV7:m<?^`
+Sd5[f<jGg!bIb0ZUtssnh@ZurV5q4'[TdNNXNH;7XakOK/8TJuPO,l0rbap4BP#Hj(+p<kEnEosf:&"S
+F#P1IpEm+B`7JGlG?3:`(B;)c[QX"9!UK#n\Bn[YGLk<5g)ho3V?JMUb+\NQg2gs%(TpDZ=&-BC3pC\U
+rI7W?nC$a&lN1##_I`+arQ^.$dpgRV:9l%_JX,qI/RDLo>5E=i<GlHsqg:IFPs%':gP;,uS>k+glF7/Q
+c-@96Rqk`VNVTg=-=AboDoch!2(dB93$jTSJDKS)+km.d])QuD@[*qFiNdX@(*MUSh+mD#@tt4=m-NYI
+MMmJinA<`AY_T9hG\;)9^OV#d*;0NbG!<REO_OFb$Z$SWh>stB$ffWS'<mP8B#PQmlRH:N:C#+$2s8):
+o:.g-28[qPFg.@W\c%#=qaa$a%XtgVJeD=ZeFL!HmqJY#kq65?rKje[@Hbu8b?,^bd$su\'K7lH",F;I
+DQJ4&HFD-T<^$pTgLhDi0Rr<>cHFiJ)ubD@gNaYe+,2=iRj-t3OMu*[-i#H,Ys[?h),649%MuHepkN*t
+\84Z!%(TWO:oqJ>nqqtR^@#N!#P,H*U"BOQOOs2[@eh]gQVL*+jsT9.OPTUN`>Y6h].J5MjMOfG/U)C!
+_bc/+-;F:i']R!3fQ8[E"t(h8Kj1h,!`hJnfgW\o:3>U8:lYp1-fi0ANm56N2KYT?&X"(7eci9SPR,nN
+bt]2VTdUkk'BR,.RLK:u_$N`?Tq0hj%[:R240a/M$FDEnjhjofFTF!74pHoEeOdIQ95hhbUB[W+Yk&kD
+af$/_na@kJ4pLH5:nqpDb(l%25KG_I#-<4I8GIgBSaIEIL<f>Y#IunOJCX-"`Th@,B_[?l/Hr5'(eV4N
+YSs%)A4t2Ic1J#b#R+rJXF(ilf=i;,4q*-\*tb9a#n#9(_Ud"fmAE=>RWF>I_be&QcP3VS@45IcCl2'b
+0U+6H>GkW>\j-m#Q>SX\i?,'2!UC6":lA:adbk8i967-C*N2<iRW&9Y<2#ikbD2d1mHIV7%#&J?F#5jB
+q3lIpq(S%/4q+i4h`s[q%#&a'/6#$P"B;0G&^,s'I.C^EKnb)UL]o>/7)M7=69YemOUjfJS7i8;O:O]I
+jMOg.q)mfj`FKVWn3fGK`JRJ4N>@ZVrptr1GVg8]cYq/2'P'+;LMD-ocQ@X$(UHr&J'Y7]0cUU6btEHu
+:l(K(440LCSGr8'36XNXi7rS4NRhg-&"@+'-o$(O>/3l://2bt55]VQGj.rW4&CN/'rMcWf<7OJ<ioe3
+4SnU-`J_Q?E,p!ijia!^^(RFY;s/k^g=oZpl07GVhgH:qqs<"BT"YhP'C4*Vd2G#d5CWY2pB];VIei*F
+N>o?Eh>6H@^O#`cW(k4sWcIX(cee]BNupm-^4#nPm-H9pr:\l`rI$WS-?A/*E"Wa$OW0?PKDXHHq=a41
+[;4B3hRj`PhnOX_!W2K75POpF:n)Rek$6gCqXs0=&#YaYr:!(dr;?A3Y44d97\`i#Ms5]el)0?a:S0hI
+Qd;9gDoXN8,idhr0pBVdhn=BGH0:5Qr\unuq>U9[Q(FX!Da+*kl-fpj7un_)CUnNL::qIDEir8*Z%g/)
+`l!RMh7>IGj8T#S\OHa6MWo95gMUfIRl>700^mi0pRdJq7.Kg-a'<,,!p)!m4a?H=U@QoCJ*h^WjN3V\
+kj7Z;s%u(Mk4<l<EmpY1rcrO)ErGk-Dr89O5Q1*16]CEd[;0-aIdMW$:nX1[-i&d>9&9IW+$Ns("1N4+
+NZWN=l;aIO!`h?F4cO]6p[6kK+*dVPAc0?)5Q9<uVuQet!8,Qg>jbGh>8`Di)1)sHmH*_(">7[c$FMS$
+6:LHO8I'(XoEl<f]g=:tP=`c8@":n<];$)@!!!!(1)pdF%ft>*BJdkV`Yu(pfkb8HKj*\UJm(^"Tb`f"
+W(";pL1D.$+;oo;`:W>X)uos=!;8@@bnQV>(0V9C(3WuW((mRl)29VS(ku3^Zt^G4.VS:+MC8j"778X+
+!!(!,9IA>m:keFaX?cof+BkHSU(qDd>+l_+'l"mqTb\+R"onXr=L6]).;D\5#ZXs$6PW)REfU:3^jJ>,
+M:M;/Pg=o9:^`1^W5Wj>[:f^D!2)1?q:r+6TF0qtEZ,F]E+rdhE<G<\:`TrK-<;O"9WYL(26fI_-KfE1
+!WW5s&?F;_Y$.kmiL7p;F?7Z0(18_f$<:b+<=p&T2`t_RKds#P!Pm!LG("!?6HLG3N?B5M#,BSe65@Y-
+VUUE#[9k=e\lZ0s"b7UMk:)fjThH&oe*/^>HW/@nNWc1MXb3U)'^O5(;r%p[Jr%Zh0W+1q_e=Rd'V=RQ
+Q"CL8\]4loA_s^JI>t1!iL-]8Z<YIafFf>F@@MU3zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz!!!#gs6m
+^WV8E`~>
+
+%AXGEndBitmap
+GR
+GR
+GS
+[0.48 0 0 0.48018 0 0] CT
+[1 0 0 1 0 0] CT
+N
+0 0 M
+875 0 L
+875 656 L
+0 656 L
+0 0 L
+cp
+clip
+GS
+0 0 translate
+560 236 scale
+%AXGBeginBitmap: java.awt.image.BufferedImage
+{{
+/RawData currentfile /ASCII85Decode filter def
+/Data RawData /FlateDecode filter def
+/DeviceRGB setcolorspace
+<<
+  /ImageType 1
+  /Decode [0 1 0 1 0 1]
+  /DataSource Data
+  /Height 236
+  /ImageMatrix [560 0 0 236 0 0]
+  /Width 560
+  /BitsPerComponent 8
+>> image
+} stopped {handleerror} if
+  RawData flushfile
+} exec
+Gb"0W_/7(D$jG"<P#4?!2p!Hd7AG)AQS;hk8J.V^RVh`S.<.!4l%:0#mlLLLzzzzzzzzzzzzzzzzzzzz
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzI*6]s]slS\LNQmh#
+IhUkZeMhORfMA"M;65"ai#&G'-H4L>eH]_TqAdBIcf7?iYr!X(X&soUsI,QOZ;lHFc?D!6eSJ-er95-R
+6I>MJ0-Y;TTMMX5h0uX0SPiW8-]:5AMSmi$j,@5?X"]NC]I]e@jlO6EYH'r+opcRH]J/aDCBh*elm2V!
+6c`.U2_S_>n-k`)<Z$P6NCB[Yp"-?#Jg"%&o!.%.$;+K-:@i5Bs!@<;0=GjbU@e39HlhJ!(q(^QEM1S'
+*1or&ckfZP/tWE!4Bf^GBG&/9IcAEQ=]SK&HF,sW6!_L!3"n-%Y.^mkQ!#ts2aU'<WK-f2jA/VFWgb/b
+HqP*CV1SjjV"+ud6!sA`mVp~>
+
+%AXGEndBitmap
+GR
+GR
+GS
+[0.48 0 0 0.48018 268.80003 0] CT
+[1 0 0 1 0 0] CT
+N
+-560 0 M
+315 0 L
+315 656 L
+-560 656 L
+-560 0 L
+cp
+clip
+GS
+0 0 translate
+315 236 scale
+%AXGBeginBitmap: java.awt.image.BufferedImage
+{{
+/RawData currentfile /ASCII85Decode filter def
+/Data RawData /FlateDecode filter def
+/DeviceRGB setcolorspace
+<<
+  /ImageType 1
+  /Decode [0 1 0 1 0 1]
+  /DataSource Data
+  /Height 236
+  /ImageMatrix [315 0 0 236 0 0]
+  /Width 315
+  /BitsPerComponent 8
+>> image
+} stopped {handleerror} if
+  RawData flushfile
+} exec
+Gb"0UZ&QUc&;JRaj\"3(XqR/];CKM\^h?4s3'p,GO7Zb/#b?A>f/>a`zzzzzzzzzzzzzzzzzzzzzzzzz
+zzzzzzzzzzzzzzzzzzzzzz!:[CgA^:+`CtlBOO6&?]X"P$/Hi1u\,M:(\/eRXkj'6\\XCA]AA'(7Ijf5
+g+q<D_u5)Fr6Pg9Zf"CHS"^aHP,fl-8]nV-k`rJf9H`Z(Q?h=AG]eaf/7kU#8kfi9Z3E%]c)65RduNhY
+<T8EC-mFHP[F1#1hV([%Q6oR$8m!<3\njt!/#FA@Q+lC9D0kT[@@[a7QV)e9=.a;3L/D!.>f<Y$c][U&
+r"(UAa<,2<%+Kc=7[@c-p-qr>[3>&Zf_G3X`sC7tf0$gj<bkf)%<4/S=p?=o/V!r~>
+
+%AXGEndBitmap
+GR
+GR
+%%Trailer
+%%Pages: 1
+%%EOF
