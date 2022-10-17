@@ -23,7 +23,7 @@ class LineofSight():
         self.delta_min=5
         self.delta_max=5
         self.delta_k=1
-        self.U_max =0.5
+        self.U_max =1.5
         self.U_min=0.0
         self.y_max=20
         self.chi_max=30

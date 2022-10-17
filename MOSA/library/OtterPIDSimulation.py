@@ -18,8 +18,8 @@ vehicle.initialize_otter()
 vehicle.current_eta=np.array([10,10,0,0,0,math.radians(50)])
 # Wpx = [10,20,30,40]
 # Wpy = [10,20,10,20]
-Wpx = [10,15,20,25,30]
-Wpy = [10,12.5,10,7.5,10]
+Wpx = [10,30,50,70,90]
+Wpy = [10,20,10,20,10]
 # Wpx = [10,30,50,70]
 # Wpy = [10,20,10,40]
 ### non-index method
@@ -149,13 +149,13 @@ plt.plot(timeOtter,pervane_iskele)
 plt.title('İskele')
 
 plt.figure()
-plt.plot(timeOtter,chi_d_list)
+plt.plot(timeOtter,chi_d_list,'r')
 plt.plot(timeOtter,actualheading_list)
 plt.title('Heading')
 
 
 plt.figure()
-plt.plot(timeOtter,refheading_list)
+plt.plot(timeOtter,refheading_list,)
 plt.title('filtred ref signal')
 
 plt.xlabel('Zaman')

@@ -201,8 +201,9 @@ class USVController():
                 print( (heading_ref-self.filtred_heading_signal)%360)
           
                 self.filtred_heading_signal = self.filtred_heading_signal-0.36
-                if self.filtred_heading_signal<heading_ref:
-                    self.filtred_heading_signal=heading_ref
+                if abs(self.filtred_heading_signal-heading_ref)<0.36:
+                    if self.filtred_heading_signal<heading_ref:
+                        self.filtred_heading_signal=heading_ref
             
             if abs(heading_ref-self.filtred_heading_signal)> (heading_ref-self.filtred_heading_signal)%360:
             
@@ -224,8 +225,9 @@ class USVController():
              
                 print(heading_ref-self.filtred_heading_signal)
                 self.filtred_heading_signal = self.filtred_heading_signal+0.36
-                if self.filtred_heading_signal>heading_ref:
-                    self.filtred_heading_signal=heading_ref
+                if abs(self.filtred_heading_signal-heading_ref)<0.36:
+                    if self.filtred_heading_signal>heading_ref:
+                        self.filtred_heading_signal=heading_ref
             elif heading_ref-self.filtred_heading_signal>(-(heading_ref-self.filtred_heading_signal))%360:
             
                 print( heading_ref-self.filtred_heading_signal)
