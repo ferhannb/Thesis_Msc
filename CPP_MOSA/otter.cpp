@@ -30,8 +30,8 @@ Otter::Otter(std::string controlSystem = "stepInput",
 
     controlMode = controlSystem;
 
-    controls[0] = "Left propeller shaft speed (rad/s)";
-    controls[1] = "Right propeller shaft speed (rad/s)";
+    // controls[0] = "Left propeller shaft speed (rad/s)";
+    // controls[1] = "Right propeller shaft speed (rad/s)";
 
     name = "Otter USV (see otter.py for more details)";
     // Initialize the Otter USV model
@@ -60,11 +60,3 @@ Otter::Otter(std::string controlSystem = "stepInput",
     float Nrdot;
 }
 
-void Otter::initialize_otter()
-{
-    std::fill(nu, nu + 6, 0);
-    std::fill(u_actual, u_actual + 2, 0);
-    std::fill(u_control, u_control + 2, 0);
-    std::fill(current_eta, current_eta + 6, 0);
-    speed = 0;
-}
