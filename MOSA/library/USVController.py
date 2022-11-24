@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from email.quoprimime import header_decode
 from signal import signal
 from numpy import clip
 from interpolation_ import OtterPolation
@@ -190,95 +191,104 @@ class USVController():
                 self.filtred_signal=speed_ref
         return self.filtred_signal
 
-    def Filtred_heading_referans(self,heading_ref):
-
-
-        if heading_ref-self.filtred_heading_signal<0:
-         
-            if abs(heading_ref-self.filtred_heading_signal)< (heading_ref-self.filtred_heading_signal)%360:
-                print('REF',heading_ref)
-                print(self.filtred_heading_signal)
-                print( (heading_ref-self.filtred_heading_signal)%360)
-          
-                self.filtred_heading_signal = self.filtred_heading_signal-0.36
-                if abs(self.filtred_heading_signal-heading_ref)<0.36:
-                    if self.filtred_heading_signal<heading_ref:
-                        self.filtred_heading_signal=heading_ref
-            
-            if abs(heading_ref-self.filtred_heading_signal)> (heading_ref-self.filtred_heading_signal)%360:
-            
-                print(self.filtred_heading_signal)
-                print(heading_ref)
-                self.filtred_heading_signal = self.filtred_heading_signal+0.36
-                self.filtred_heading_signal = (self.filtred_heading_signal)%360
-                print( self.filtred_heading_signal)
-        
-                if abs(self.filtred_heading_signal-heading_ref)<0.36:
-                    if self.filtred_heading_signal>heading_ref:
-                        self.filtred_heading_signal=heading_ref
-               
-       
-
-        elif heading_ref-self.filtred_heading_signal>0:
-            
-            if heading_ref-self.filtred_heading_signal<= (-(heading_ref-self.filtred_heading_signal))%360:
-             
-                print(heading_ref-self.filtred_heading_signal)
-                self.filtred_heading_signal = self.filtred_heading_signal+0.36
-                if abs(self.filtred_heading_signal-heading_ref)<0.36:
-                    if self.filtred_heading_signal>heading_ref:
-                        self.filtred_heading_signal=heading_ref
-            elif heading_ref-self.filtred_heading_signal>(-(heading_ref-self.filtred_heading_signal))%360:
-            
-                print( heading_ref-self.filtred_heading_signal)
-
-                self.filtred_heading_signal = self.filtred_heading_signal-0.36
-                self.filtred_heading_signal = self.filtred_heading_signal%360
-                print( self.filtred_heading_signal)
-            
-                # if self.filtred_heading_signal<heading_ref:
-                #     self.filtred_heading_signal=heading_ref
-                print( self.filtred_heading_signal)
-      
-        
-    
-        
-        return   self.filtred_heading_signal
-
-
-
-
     # def Filtred_heading_referans(self,heading_ref):
 
- 
-    #     if heading_ref-self.filtred_heading_signal<0:
-
-    #         if (heading_ref-self.filtred_heading_signal)%360<(self.filtred_heading_signal-heading_ref):
-    #             self.filtred_heading_signal = self.filtred_heading_signal+0.36
-
-    #             if self.filtred_heading_signal>0:
-
-    #                 if (-self.filtred_heading_signal)%360>heading_ref:
-    #                     self.filtred_heading_signal=heading_ref
-    #         elif  (heading_ref-self.filtred_heading_signal)%360>(self.filtred_heading_signal-heading_ref):
-
-    #             self.filtred_heading_signal = self.filtred_heading_signal - 0.36
-    #             if self.filtred_heading_signal<0:
-    #                 if (self.filtred_heading_signal%360)>heading_ref:
-    #                     self.filtred_heading_signal=heading_ref
-    #     elif heading_ref-self.filtred_heading_signal>0:
-    #         if (heading_ref-self.filtred_heading_signal)<(self.filtred_heading_signal-heading_ref)%360:
-    #             self.filtred_heading_signal = self.filtred_heading_signal+0.36
-    #             if (self.filtred_heading_signal)>0:
+    #     if heading_ref-self.filtred_heading_signal>0:
+            
+    #         if heading_ref-self.filtred_heading_signal<= (-self.filtred_heading_signal-heading_ref)%360:
+             
+    #             while self.filtred_heading_signal <= heading_ref:
+    #                 self.filtred_heading_signal = (self.filtred_heading_signal+0.36)%360
     #                 if self.filtred_heading_signal>heading_ref:
     #                     self.filtred_heading_signal=heading_ref
-    #         elif  (heading_ref-self.filtred_heading_signal)>(self.filtred_heading_signal-heading_ref)%360:
 
-    #             self.filtred_heading_signal = self.filtred_heading_signal - 0.36
-    #             if self.filtred_heading_signal<0:
-
-    #                 if (self.filtred_heading_signal%360)<heading_ref:
-    #                         self.filtred_heading_signal=heading_ref
+    #         elif heading_ref-self.filtred_heading_signal>(self.filtred_heading_signal-heading_ref)%360:
+            
+    #             while self.filtred_heading_signal>= heading_ref:
+    #                 self.filtred_heading_signal = (self.filtred_heading_signal-0.36)%360
                 
-    #     return self.filtred_heading_signal
+    #             if self.filtred_heading_signal<heading_ref:
+    #                 self.filtred_heading_signal=heading_ref
+                            
+                
+                
+      
+
+
+    #     elif heading_ref-self.filtred_heading_signal<0:
+         
+    #         if abs(heading_ref-self.filtred_heading_signal)< (heading_ref-self.filtred_heading_signal)%360:
+    #             while self.filtred_heading_signal>=heading_ref:
+    #                 self.filtred_heading_signal = self.filtred_heading_signal-0.36
+    #                 if self.filtred_heading_signal<heading_ref:
+    #                     self.filtred_heading_signal=heading_ref
+            
+    #         if abs(heading_ref-self.filtred_heading_signal)> (heading_ref-self.filtred_heading_signal)%360:
+                
+
+    #             while self.filtred_heading_signal<=heading_ref:
+    #                 self.filtred_heading_signal = (self.filtred_heading_signal+0.36)%360
+        
+        
+
+    #             if self.filtred_heading_signal>heading_ref:
+    #                 self.filtred_heading_signal=heading_ref
+                 
+    #     return   self.filtred_heading_signal
+
+
+
+
+    def Filtred_heading_referans(self,heading_ref):
+        if heading_ref>=180:
+            heading_ref = heading_ref-360
+        error = heading_ref-self.filtred_heading_signal
+        if error >=180:
+            
+            error = error-360 
+            
+        elif error<=-180:
+            error = 360+error 
+        if abs(error)<=0.36:
+            
+            self.filtred_heading_signal = heading_ref 
+                
+        else:
+            self.filtred_heading_signal = (self.filtred_heading_signal+0.36*error/abs(error))%360
+            
+        if self.filtred_heading_signal >=180:
+            self.filtred_heading_signal = self.filtred_heading_signal-360
+
+
+
+
+
+
+
+
+
+
+        #     if (heading_ref-self.filtred_heading_signal)%360<(self.filtred_heading_signal-heading_ref):
+        #         self.filtred_heading_signal = self.filtred_heading_signal+0.36
+
+        #         if abs(self.filtred_heading_signal-heading_ref)<=0.36:
+        #             self.filtred_heading_signal=heading_ref
+                    
+              
+        #     elif  (heading_ref-self.filtred_heading_signal)%360>(self.filtred_heading_signal-heading_ref):
+        #         self.filtred_heading_signal = self.filtred_heading_signal - 0.36
+        #         if abs(self.filtred_heading_signal-heading_ref)<=0.36:
+        #             self.filtred_heading_signal=heading_ref
+
+        #  elif heading_ref-self.filtred_heading_signal>0:
+        #     if (heading_ref-self.filtred_heading_signal)<(self.filtred_heading_signal-heading_ref)%360:
+        #         self.filtred_heading_signal = self.filtred_heading_signal+0.36
+        #         if abs(self.filtred_heading_signal-heading_ref)<=0.36:
+        #             self.filtred_heading_signal=heading_ref
+        #     elif  (heading_ref-self.filtred_heading_signal)>(self.filtred_heading_signal-heading_ref)%360:
+        #         self.filtred_heading_signal = self.filtred_heading_signal - 0.36
+        #         if abs(self.filtred_heading_signal-heading_ref)<=0.36:
+        #             self.filtred_heading_signal=heading_ref
+        
+        return self.filtred_heading_signal
 

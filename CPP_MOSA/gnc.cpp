@@ -16,7 +16,7 @@ MatrixXf  Hmtrx(const VectorXf &a)
     return H.block(0,3,3,3) = Smtrx(a).transpose();
 }
 
-Matrix3f Rzyx( float phi, float theta, float psi)
+Matrix3f Rzyx(float phi,float theta, float psi)
 {
     float cphi = cos(phi);
     float sphi = cos(sphi);
@@ -25,7 +25,7 @@ Matrix3f Rzyx( float phi, float theta, float psi)
     float cpsi = cos(psi);
     float spsi = sin(psi);
 
-    Matrix3f R  {
+    Matrix3f R = {
                 { cpsi*cth, -spsi*cphi+cpsi*sth*sphi, spsi*sphi+cpsi*cphi*sth },
                 { spsi*cth,  cpsi*cphi+sphi*sth*spsi, -cpsi*sphi+sth*spsi*cphi },
                 { -sth,      cth*sphi,                 cth*cphi }
@@ -58,11 +58,13 @@ Matrix3f Tzyx( float phi, float theta)
 VectorXf attitudeEuler(const VectorXf &eta,const VectorXf &nu, const float sampleTime)
 
 {
-    // Vector3f p_dot = Rzyx(eta[3],eta[4],eta[5])*nu.head(3);
-    // Vector3f v_dot = Tzyx(eta[3],eta[4])*nu.tail<3>();
+    Vector3f p_dot = Rzyx(eta[3],eta[4],eta[5]);//*nu(seqN(0,3));
+    Vector3f v_dot = Tzyx(eta[3],eta[4]);//*nu(seqN(3,3));
 
     // // Forward Euler Integration
 
     // eta.block(0,0,1,3) = eta.head(3)+sampleTime*p_dot;
     // eta.block(0,3,3,1) = eta.tail<3>() +sampleTime*v_dot;
+
+    return p_dot;
 }

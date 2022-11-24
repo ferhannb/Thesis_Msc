@@ -65,31 +65,31 @@ for _ in range(2000):
     ### REFERANS HIZ ve HEADING
     
 
-    if _  <500:
-        ref_speed = 3.08
-    elif _ <800:
-        ref_speed = 1
-    elif _<1500:
-        ref_speed = 2.2
-    elif _<2500:
-        ref_speed = 0.5
-    elif _<3000:
-        ref_speed=1.75
-    
     # if _  <500:
-    #     ref_heading = 30
+    #     ref_speed = 3.08
     # elif _ <800:
-    #     ref_heading = 70
+    #     ref_speed = 1
     # elif _<1500:
-    #     ref_heading = 330
+    #     ref_speed = 2.2
     # elif _<2500:
-    #     ref_heading = 50
+    #     ref_speed = 0.5
     # elif _<3000:
-    #     ref_heading=50
+    #     ref_speed=1.75
+    
+    if _  <500:
+        ref_heading = 70
+    elif _ <800:
+        ref_heading = 160
+    elif _<1500:
+        ref_heading = 190
+    elif _<2500:
+        ref_heading = 50
+    elif _<3000:
+        ref_heading=50
 
     
-    ref_heading = 0 
-    # ref_speed = 0
+    # ref_heading = 0 
+    ref_speed = 0
 
     speed_otter = math.sqrt(vehicle.nu[0]**2+vehicle.nu[1]**2)
     filtred_heading_signal = pid.Filtred_heading_referans(ref_heading)
@@ -130,7 +130,40 @@ for _ in range(2000):
     U_total_list.append(u_avg)
     U_i_list.append(pid.U_i)
     U_p_list.append(pid.U_p)
+    
 
+import numpy as np
+import matplotlib.pyplot as plt
+  
+  
+# setting the axes projection as polar
+# plt.axes(projection = 'polar')
+  
+# setting the radius
+
+
+  
+# creating an array containing the
+# radian values
+
+# rad_list_heading =np.array([])
+# heading_ref_list=np.array(heading_ref_list) 
+# r_list = np.array([])
+# r =1
+# for i in heading_ref_list:
+#     rad_list_heading=np.append(rad_list_heading,math.radians(i))
+#     r=r+1
+#     r_list = np.append(r_list,r)
+#     print(r_list)
+# print(rad_list_heading)
+# print(r_list)
+# # plotting the circle
+# for rad in rad_list_heading:
+#     plt.polar(rad, r_list, 'g.')
+    
+  
+# # display the Polar plot
+# plt.show()
 
 df = pd.DataFrame([np.transpose(speed_list),np.transpose(iskele_rpm),np.transpose(time_list)])    
 df.to_csv('otter_hizlanma_yavaşlama.csv',index=False)

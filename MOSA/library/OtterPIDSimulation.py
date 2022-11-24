@@ -62,7 +62,7 @@ refheading_list = []
 los_index.path_generate(Wpx,Wpy) # self.coeff ,self.x_init, self.y_init,self.Wp_x_init,self.Wp_y_init
 Time = 0.0
 e,a,b,c,d = generate_curve(Wpx,Wpy,0.01)
-for i in range(2500):
+for i in range(3500):
 
     Time+=0.02
     timeOtter.append(Time)

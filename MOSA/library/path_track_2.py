@@ -23,8 +23,8 @@ class LineofSight():
         self.delta_min=5
         self.delta_max=5
         self.delta_k=1
-        self.U_max =1.5
-        self.U_min=0.0
+        self.U_max =2.5
+        self.U_min=1.5
         self.y_max=20
         self.chi_max=30
         self.k=0
@@ -250,8 +250,8 @@ class LineofSight():
 
         plt.clf()
         # plt.cla()
-        plt.xlim([0,40])
-        plt.ylim([0,40])
+        plt.xlim([0,100])
+        plt.ylim([0,100])
         plt.plot(Wpx,Wpy,'ro',label='Waypoints')
 
         # plt.gcf().gca().add_artist(plt.Circle((x_obs,y_obs),2,fill=False))

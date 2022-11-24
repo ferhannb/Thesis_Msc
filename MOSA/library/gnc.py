@@ -172,7 +172,7 @@ def crossFlowDrag(L,B,T,nu_r):
 
     dx = L/20             
     Cd_2D = Hoerner(B,T)    # 2D drag coefficient based on Hoerner's curve
-
+    print('Cd_2D',Cd_2D)
     Yh = 0
     Nh = 0
     xL = -L/2
@@ -188,3 +188,12 @@ def crossFlowDrag(L,B,T,nu_r):
     tau_crossflow = np.array([0, Yh, 0, 0, 0, Nh],float)
 
     return tau_crossflow
+
+if __name__=='__main__':
+
+    for i in range(2):
+        eta = np.array([0,0,0,0,0,0])
+        st = 0.02
+        nu =  np.array([10,0,0,0,0,0])
+        eta = attitudeEuler(eta,nu,st)
+    print(eta)
